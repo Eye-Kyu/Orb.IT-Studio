@@ -39,7 +39,7 @@ export default function Home() {
 
 <Subtopic></Subtopic>
 
-<div className='relative w-8/12 ml-20 '>
+<div className='relative w-8/12 ml-20'>
 <Carousel>
   <CarouselContent >
     <CarouselItem>
