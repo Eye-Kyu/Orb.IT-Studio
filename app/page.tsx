@@ -30,14 +30,6 @@ export default function Home() {
       </Orby>
 
       <div className="landingly">
-        <div className=" flex flex-col w-screen h-92 overflow-x-hidden space-y-12">
-          <Subtopic>LEAVING LASTING IMPRESSIONS</Subtopic>
-
-          <div className="relative w-8/12 ml-20 h-3/4">
-            <Titros />
-          </div>
-        </div>
-
         <Subtopic>JOIN OUR CREATIVE JOURNEY</Subtopic>
         <Madividi>
           Discover how <span className="underlining">KYU.Firm</span> can
@@ -46,6 +38,14 @@ export default function Home() {
         </Madividi>
 
         <Services />
+
+        <div className=" flex flex-col w-screen h-92 overflow-x-hidden space-y-12">
+          <Subtopic>LEAVING LASTING IMPRESSIONS</Subtopic>
+
+          <div className="relative w-8/12 ml-20 h-3/4">
+            <Titros />
+          </div>
+        </div>
 
         <div className="placecenter w-screen  relative flex-col mb-12 space-y-8 mt-12">
           <Subtopic>CONNECT WITH US</Subtopic>
