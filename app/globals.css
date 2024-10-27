@@ -42,13 +42,13 @@ h1 {
   line-height: 145px;
   z-index: 672;
 }
-.alternate-heading{
+.alternate-heading {
   font-family: paragraphs;
 }
 .headish {
   font-family: borish;
 }
-.Madividi underlining{
+.Madividi underlining {
   text-decoration: underline;
 }
 .boldentext {
@@ -62,7 +62,6 @@ h1 {
   padding-right: 2em;
   padding-top: 4em;
   font-family: borish;
-
 }
 .landingly h1 {
   font-size: 181px;
@@ -140,7 +139,7 @@ h1 {
     @apply bg-background text-foreground;
   }
 }
-.thirdpager{
+.thirdpager {
   display: flex;
   width: 30vw;
 }
@@ -149,7 +148,7 @@ h1 {
   text-decoration-thickness: 1px;
 }
 .testimonials-info {
-  display:flex;
+  display: flex;
   justify-content: flex-start;
   align-items: flex-start;
   align-self: flex-start;
@@ -195,4 +194,4 @@ h1 {
   left: 60%;
   top: 90%;
   rotate: -20deg;
- }
+}

@@ -2,16 +2,9 @@ import "@radix-ui/themes/styles.css";
 import FooterLinks from "@/components/ui/links";
 import { Separator, Flex } from "@radix-ui/themes";
 function Footer() {
-  <Flex align="center" gap="4" height="96px">
-    <Separator orientation="vertical" size="1" />
-    <Separator orientation="vertical" size="2" />
-    <Separator orientation="vertical" size="3" />
-    <Separator orientation="vertical" size="4" />
-  </Flex>;
-
   return (
-    <div className=" border-black border h-72 rounded-md relative mt-8">
-      <div className="footing text-center  text-xl text-gray-950  flex flex-row p-5">
+    <div className=" border h-72 rounded-md relative mt-8">
+      <div className="footing text-center  text-xl  flex flex-row p-5">
         <div className="w-2/5 text-4xl text-left ">
           <p>Follow us on Social Media to Stay Updated</p>
         </div>
