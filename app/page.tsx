@@ -6,7 +6,6 @@ import "@radix-ui/themes/styles.css";
 import Orby from "@/components/ui/explainer";
 import Subtopic from "@/components/ui/subheader";
 import Titros from "@/components/ui/details";
-import Navbar from "@/components/ui/navbar";
 import Footer from "@/components/ui/footer";
 import Madividi from "@/components/ui/divs";
 import Centertext from "@/components/ui/centrewriting";
@@ -16,8 +15,6 @@ import Services from "@/components/ui/service";
 export default function Home() {
   return (
     <div className="h-auto w-screen">
-      <Navbar></Navbar>
-
       <div className=""></div>
 
       <div className="landingly h-screen w-screen text-center">
