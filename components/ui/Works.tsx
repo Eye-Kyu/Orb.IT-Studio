@@ -6,25 +6,53 @@ export default function Works() {
       service: "WEB DESIGN",
       description:
         "We set ourself apart with a unique blend of artistic design, technical expertise, and a client-focused approach. Viewing web design as an immersive brand experience, We prioritize personalization over templates, ensuring each project reflects the your voice and resonates with your target audiences. By utilizing the latest design trends and technologies, from responsive layouts to interactive features, we create visually stunning, highly functional websites. Our collaborative process, which emphasizes close client engagement, guarantees that each site aligns with brand identity and adapts to evolving business goals. This commitment to quality and user-centric design has positioned Studio Mizan as a leader in crafting memorable digital experiences that effectively connect brands with their audiences.",
-      img: "",
+      img: (
+        <Image
+          src="/static/web-dev.png"
+          alt="Web design"
+          width="400"
+          height="700"
+        />
+      ),
     },
     {
       service: "GRAPHIC DESIGN",
       description:
         "We offer graphic design services that combine creativity, precision, and strategic insight to bring brands to life visually. Our approach centers on crafting designs that not only look stunning but also communicate a brand’s message clearly and effectively. From custom illustrations and typography to layout design and color schemes, we tailor each element to reflect the unique identity of our clients. We prioritize collaboration, working closely with clients to understand their goals and preferences, ensuring each design aligns with their vision and resonates with their target audience. Whether it’s for print, digital, or social media, our graphic design services are crafted to make a memorable impact and support cohesive brand storytelling. Through our dedication to quality, personalization, and client partnership, we help brands stand out with visuals that captivate and connect.",
-      img: "",
+      img: (
+        <Image
+          src="/static/graphic-design.png"
+          alt="Graphic Design"
+          width="400"
+          height="700"
+        />
+      ),
     },
     {
       service: "BRANDING",
       description:
         "We specialize in branding, bringing a unique blend of creativity, strategy, and precision to each project. Our approach to branding is rooted in understanding the essence of a brand and translating it into a powerful, cohesive identity that resonates with target audiences. Rather than relying on templates, we tailor each branding package to reflect the distinct voice, vision, and goals of our clients. From logo design and typography to color schemes and messaging, we ensure every element speaks to the brand’s character and purpose. By collaborating closely with our clients, we build a partnership that shapes the creative process, guaranteeing that the final brand identity aligns with the client’s vision and adapts to future growth. Through this client-focused and strategic approach, we empower brands to stand out, tell their story effectively, and leave a lasting impression in the minds of their audience.",
-      img: "",
+      img: (
+        <Image
+          src="/branding-image.jpg"
+          alt="Branding"
+          width="400"
+          height="700"
+        />
+      ),
     },
     {
       service: "APP DEVELOPMENT",
       description:
         "We specialize in mobile app development, creating apps that are not only functional but also engaging and user-friendly. Our approach combines cutting-edge technology with thoughtful design, ensuring each app offers an intuitive experience that aligns with our clients’ brand values and objectives. From concept to launch, we work closely with clients to understand their needs, tailoring each app’s features, interface, and flow to provide a seamless user experience. Our team prioritizes performance, security, and scalability, designing apps that are ready to adapt as the brand grows. By focusing on innovation and usability, we build mobile apps that stand out in the market, helping clients connect with their audience in a meaningful, lasting way.",
-      img: "",
+      img: (
+        <Image
+          src="/static/Web-Design.png"
+          alt="App Development"
+          width="400"
+          height="700"
+        />
+      ),
     },
     {
       service: "IT CONSULTING",
@@ -65,7 +93,7 @@ export default function Works() {
                 <p className="text-center text-xl w-3/5">{work.description}</p>
               </div>
               <div className="work-img">
-                <Image src={work.img} alt={work.service} />
+                <div>{work.img} </div>
               </div>
             </div>
           </div>
