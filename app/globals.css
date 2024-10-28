@@ -36,16 +36,19 @@ body {
 P {
   font-family: Satoshi;
   z-index: 672;
+  line-height: 1.8em;
 }
 h1 {
   font-size: 145px;
   line-height: 145px;
   z-index: 672;
+  font-family: borish;
 }
 .alternate-heading {
   font-family: paragraphs;
 }
-.headish {
+.headish,
+h3 {
   font-family: borish;
 }
 .Madividi underlining {

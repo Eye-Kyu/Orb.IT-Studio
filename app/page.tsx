@@ -6,7 +6,6 @@ import "@radix-ui/themes/styles.css";
 import Orby from "@/components/ui/explainer";
 import Subtopic from "@/components/ui/subheader";
 import Titros from "@/components/ui/details";
-import Footer from "@/components/ui/footer";
 import Madividi from "@/components/ui/divs";
 import Centertext from "@/components/ui/centrewriting";
 import Miniservices from "@/components/ui/mini-services";
@@ -56,8 +55,6 @@ export default function Home() {
             <Miniservices>Project Collabration</Miniservices>
           </div>
         </div>
-
-        <Footer></Footer>
       </div>
     </div>
   );

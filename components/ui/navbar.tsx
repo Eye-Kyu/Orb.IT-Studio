@@ -25,6 +25,9 @@ function Navbar() {
               <SheetContent className="flex-col space-y-12">
                 <SheetHeader>
                   <SheetTitle className="boldentext">
+                    <Link href="/"> HOME</Link>
+                  </SheetTitle>
+                  <SheetTitle className="boldentext">
                     <Link href="/solutions"> SOLUTIONS</Link>
                   </SheetTitle>
                   <SheetTitle className="boldentext">
