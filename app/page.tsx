@@ -10,15 +10,14 @@ import Madividi from "@/components/ui/divs";
 import Centertext from "@/components/ui/centrewriting";
 import Miniservices from "@/components/ui/mini-services";
 import Services from "@/components/ui/service";
+import Landingpage from "@/components/ui/hero";
 
 export default function Home() {
   return (
     <div className="h-auto w-screen">
       <div className=""></div>
 
-      <div className="landingly h-screen w-screen text-center">
-        <h1 className="">MAKE WAVES...NOT RIPPLES </h1>
-      </div>
+      <Landingpage>MAKE WAVES...NOT RIPPLES </Landingpage>
 
       <Orby>
         A Digital Design and Tech Studio based in Nairobi. We build brands,

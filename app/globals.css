@@ -44,6 +44,13 @@ h1 {
   z-index: 672;
   font-family: borish;
 }
+h2 {
+    font-size: 100px;
+    line-height: 125px;
+    z-index: 672;
+    font-family: borish;
+  }
+  
 .alternate-heading {
   font-family: paragraphs;
 }

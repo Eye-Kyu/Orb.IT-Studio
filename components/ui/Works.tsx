@@ -26,6 +26,8 @@ export default function Works() {
         "E-commerce websites",
         "website redesign",
         "website development,",
+        "UI/UX design",
+        "website perfomance optimization",
       ],
     },
     {
@@ -41,7 +43,7 @@ export default function Works() {
           style={imageStyle}
         />
       ),
-      subservices: ["LOGO Design", "Posters and Brochures"],
+      subservices: ["LOGO Design", "Posters and Brochures", "Motion Graphics"],
     },
     {
       service: "BRANDING",
@@ -56,7 +58,14 @@ export default function Works() {
           style={imageStyle}
         />
       ),
-      subservices: ["Brand Identity"],
+      subservices: [
+        "Brand Identity",
+        "Packaging design",
+        "Visual identity",
+        "Branding consulting",
+        "Branding Strategy",
+        "Motion Graphics",
+      ],
     },
     {
       service: "APP DEVELOPMENT",
