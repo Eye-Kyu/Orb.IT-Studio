@@ -1,6 +1,6 @@
 export default function SolutionsLanding() {
   return (
-    <div className="landingly w-screen h-screen flex justify-between">
+    <div className="landingly w-screen min-h-screen flex justify-between">
       <div className="uppertext absolute flex-col items-center justify-center w-2/5">
         <h2 className="text-8xl">THE FUTURE</h2>
         <h2 className="text-8xl">HAPPENING TODAY</h2>
