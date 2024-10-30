@@ -18,10 +18,10 @@ function Navbar() {
     <div className="pt-2 mb-8">
       <NavigationMenu>
         <NavigationMenuList className="flex justify-between w-screen px-14">
-          <NavigationMenuItem>Kyu.Firm</NavigationMenuItem>
+          <NavigationMenuItem>YOGI.Studio</NavigationMenuItem>
           <NavigationMenuItem>
             <Sheet>
-              <SheetTrigger>Open</SheetTrigger>
+              <SheetTrigger>Menu</SheetTrigger>
               <SheetContent className="flex-col space-y-12">
                 <SheetHeader>
                   <SheetTitle className="boldentext">
@@ -34,7 +34,11 @@ function Navbar() {
                     <Link href="/agency"> AGENCY</Link>
                   </SheetTitle>
                   <SheetTitle className="boldentext">PLAYGROUND</SheetTitle>
-                  <SheetTitle className="boldentext">CONTACT</SheetTitle>
+
+                  <SheetTitle className="boldentext">
+                    <Link href="/contact"> CONTACT</Link>
+                  </SheetTitle>
+
                   <Button className="w-2/4 m-auto rounded-md text-1xl">
                     Start Your Project
                   </Button>

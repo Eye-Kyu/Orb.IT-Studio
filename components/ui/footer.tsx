@@ -22,7 +22,9 @@ function Footer() {
           <FooterLinks>
             <Link href="/agency/"> Agency</Link>
           </FooterLinks>
-          <FooterLinks>About Us</FooterLinks>
+          <FooterLinks>
+            <Link href="/contact/"> Contact Us</Link>
+          </FooterLinks>
         </div>
         <Flex align="center" gap="4" height="15rem">
           <Separator orientation="vertical" size="4" />
@@ -31,7 +33,6 @@ function Footer() {
           <FooterLinks>Support</FooterLinks>
           <FooterLinks>FAQ</FooterLinks>
           <FooterLinks>Articles</FooterLinks>
-          <FooterLinks>Contact Us</FooterLinks>
         </div>
         <Flex align="center" gap="4" height="15rem">
           <Separator orientation="vertical" size="4" />
@@ -43,7 +44,7 @@ function Footer() {
         </div>
       </div>
       <div className="footnote flex left-1/3 relative text-gray-500 mt-4 bottom-0 ">
-        Copyright © 2023 Orb.IT Studio. All rights reserved.
+        Copyright © 2024 YOGI.Studio. All rights reserved.
       </div>
     </div>
   );

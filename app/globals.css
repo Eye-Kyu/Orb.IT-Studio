@@ -45,12 +45,12 @@ h1 {
   font-family: borish;
 }
 h2 {
-    font-size: 100px;
-    line-height: 125px;
-    z-index: 672;
-    font-family: borish;
-  }
-  
+  font-size: 100px;
+  line-height: 125px;
+  z-index: 672;
+  font-family: borish;
+}
+
 .alternate-heading {
   font-family: paragraphs;
 }
@@ -204,4 +204,25 @@ h3 {
   left: 60%;
   top: 90%;
   rotate: -20deg;
+}
+
+input[type="text"],
+input[type="Email"],
+input[type="password"],
+input[type="number"],
+input[type="tel"],
+textarea {
+  width: 100%;
+  outline: none;
+  background: none;
+  border: none;
+  border-bottom: 1px solid grey;
+  font-family: Satoshi;
+}
+label {
+  font-family: Satoshi;
+  color: grey;
+}
+input {
+  color: #ffffff;
 }
