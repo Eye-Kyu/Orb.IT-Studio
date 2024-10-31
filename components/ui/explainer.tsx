@@ -9,7 +9,7 @@ interface OrbyProps {
 export default function Orby({ children }: OrbyProps) {
   return (
     <div className="relative flex-col space-y-12 box-border h-screen w-screen">
-      <p className=" text-center  pt-24 px-20 text-6xl font-medium leading-normal w-screen alternate-heading">
+      <p className="sm:text-4xl text-center  lg:pt-24 lg:px-20 lg:text-6xl font-medium lg:leading-normal w-screen alternate-heading">
         {" "}
         {children}
       </p>

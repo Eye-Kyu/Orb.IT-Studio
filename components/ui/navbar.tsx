@@ -16,12 +16,14 @@ import Link from "next/link";
 function Navbar() {
   return (
     <div className="pt-2 mb-8">
-      <NavigationMenu>
-        <NavigationMenuList className="flex justify-between w-screen px-14">
-          <NavigationMenuItem>YOGI.Studio</NavigationMenuItem>
+      <NavigationMenu className="w-screen">
+        <NavigationMenuList className="md:flex justify-between w-screen px-14">
+          <NavigationMenuItem className="Logo text-2xl">
+            YOGI.<span className="text-xl">Studio</span>
+          </NavigationMenuItem>
           <NavigationMenuItem>
             <Sheet>
-              <SheetTrigger>Menu</SheetTrigger>
+              <SheetTrigger className="">Menu</SheetTrigger>
               <SheetContent className="flex-col space-y-12">
                 <SheetHeader>
                   <SheetTitle className="boldentext">
