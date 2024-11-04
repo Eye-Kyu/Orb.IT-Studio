@@ -43,7 +43,7 @@ function Footer() {
           <FooterLinks>Tik Tok</FooterLinks>
         </div>
       </div>
-      <div className="footnote flex left-1/3 relative text-gray-500 mt-4 bottom-0 ">
+      <div className="footnote flex lg:text-base relative text-gray-500 mt-4 bottom-0 text-sm text-center">
         Copyright © 2024 YOGI.Studio. All rights reserved.
       </div>
     </div>
