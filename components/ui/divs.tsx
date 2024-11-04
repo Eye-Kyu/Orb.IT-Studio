@@ -10,7 +10,7 @@ export default function Madividi({ children }: Divisions) {
   return (
     <div className="services h-screen lg:flex lg:flex-row flex-col w-screen">
       <div className=" half-screen flex lg:w-2/4  lg:leading-12 lg:space-y-12 w-screen">
-        <p className="  text-3xl">{children}</p>
+        <p className="  text-xl text-wrap lg:text-3xl">{children}</p>
       </div>
 
       <div className="images relative lg:h-72 lg:w-2/4 flex w-screen mt-28 lg:mt-0">
