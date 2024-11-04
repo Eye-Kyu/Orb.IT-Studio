@@ -47,11 +47,11 @@ export default function Services({ ...props }) {
   ];
   return (
     <div className="services flex-col relative">
-      <div className="w-screen block placecenter">
+      <div className="w-screen block placecenter lg:my-0 my-5">
         <Subtopic>What Do We Do. . .</Subtopic>
       </div>
 
-      <div className="flex flex-col space-y-11">
+      <div className="flex flex-col lg:space-y-11 space-y-6">
         <div className="flex-col flex">
           <ul {...props} className="h-auto lg:h-screen flex-col ">
             {Maservices.map((service) => (
