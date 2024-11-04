@@ -6,7 +6,7 @@ function Footer() {
   return (
     <div className=" border h-72 rounded-md relative mt-8">
       <div className="footing text-center  text-xl  flex flex-row p-5">
-        <div className="w-2/5 text-4xl text-left ">
+        <div className="w-2/5 lg:text-4xl text-left text-base ">
           <p>Follow us on Social Media to Stay Updated</p>
         </div>
         <Flex align="center" gap="4" height="15rem">

@@ -7,7 +7,7 @@ interface SubtopicProps {
 
 export default function Subtopic({ children }: SubtopicProps) {
   return (
-    <div className=" text-8xl font-thinner tracking-tighter leading-tight text-wrap headish ">
+    <div className="text-5xl w-screen lg:text-nowrap lg:text-left text-center lg:text-7xl font-thinner tracking-tighter leading-tight text-wrap headish ">
       {children}
     </div>
   );

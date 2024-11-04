@@ -17,8 +17,8 @@ function Navbar() {
   return (
     <div className="pt-2 mb-8">
       <NavigationMenu className="w-screen">
-        <NavigationMenuList className="md:flex justify-between w-screen px-14">
-          <NavigationMenuItem className="Logo text-2xl">
+        <NavigationMenuList className="flex justify-between w-screen lg:px-14 px-2">
+          <NavigationMenuItem className="Logo lg:text-2xl text-lg ">
             YOGI.<span className="text-xl">Studio</span>
           </NavigationMenuItem>
           <NavigationMenuItem>

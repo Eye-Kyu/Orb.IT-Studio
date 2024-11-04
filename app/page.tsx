@@ -34,7 +34,7 @@ export default function Home() {
 
         <Services />
 
-        <div className=" flex flex-col w-screen h-92 overflow-x-hidden space-y-12">
+        <div className=" flex flex-col w-screen h-92 overflow-x-hidden space-y-12 lg:mt-8">
           <Subtopic>LEAVING LASTING IMPRESSIONS</Subtopic>
 
           <div className="relative w-8/12 ml-20 h-3/4">
@@ -48,7 +48,7 @@ export default function Home() {
             Reach out to Yogi.studio for Enquiries, collabrations or support. We
             are here here to help you achieve your goals.
           </Centertext>
-          <div className="flex w-screen gap-3 items-center justify-center">
+          <div className="flex w-screen lg:gap-3 gap-1 items-center justify-center">
             <Miniservices>Design Consultation</Miniservices>
             <Miniservices>Technical Support</Miniservices>
             <Miniservices>Project Collabration</Miniservices>

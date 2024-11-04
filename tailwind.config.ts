@@ -20,7 +20,7 @@ const config: Config = {
 				'4xl': '2.441rem',
 				'5xl': '3.052rem',
 				'6xl': '4.052rem',
-				'7xl': '5.625rem',
+				'7xl': '6.625rem',
 				'8xl': '8.25rem',
 				'9xl': '11.25rem'
 			},

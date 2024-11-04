@@ -46,24 +46,24 @@ export default function Services({ ...props }) {
     },
   ];
   return (
-    <div className="services flex-col">
+    <div className="services flex-col relative">
       <div className="w-screen block placecenter">
         <Subtopic>What Do We Do. . .</Subtopic>
       </div>
 
       <div className="flex flex-col space-y-11">
         <div className="flex-col flex">
-          <ul {...props} className="h-screen flex-col ">
+          <ul {...props} className="h-auto lg:h-screen flex-col ">
             {Maservices.map((service) => (
               <li
                 key={service.id}
                 className="cursor-pointer hover:text-teal-700 h-20 justify-center items-center"
               >
-                <div className="text-3xl">
+                <div className="lg:text-3xl">
                   <Flex direction="column" gap="4">
                     <Separator orientation="horizontal" size="4" />
 
-                    <p className="text-5xl">{service.Solution}</p>
+                    <p className="lg:text-5xl text-2xl">{service.Solution}</p>
                   </Flex>
                 </div>
               </li>
