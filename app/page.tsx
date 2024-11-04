@@ -48,7 +48,7 @@ export default function Home() {
             Reach out to Yogi.studio for Enquiries, collabrations or support. We
             are here here to help you achieve your goals.
           </Centertext>
-          <div className="flex w-screen lg:gap-3 gap-1 items-center justify-center">
+          <div className="lg:flex-row flex-col w-screen lg:gap-3 items-center justify-center lg:space-y-0 space-y-3">
             <Miniservices>Design Consultation</Miniservices>
             <Miniservices>Technical Support</Miniservices>
             <Miniservices>Project Collabration</Miniservices>
