@@ -79,6 +79,12 @@ h3 {
   font-family: borish;
   overflow-x: hidden;
 }
+.solutions-landingly {
+  padding-left: 2em;
+  padding-right: 2em;
+  font-family: borish;
+  overflow-x: hidden;
+}
 .landingly-mobile {
   padding-top: 2em;
   overflow-x: hidden;
