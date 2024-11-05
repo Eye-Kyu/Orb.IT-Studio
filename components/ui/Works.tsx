@@ -159,7 +159,7 @@ export default function Works() {
           <div key={index} className="col-lg-4 col-md-6  w-screen">
             <div className="work-item flex flex-col items-center justify-center mt-16 mb-12">
               <div className="work-info flex-col  placecenter ">
-                <h3 className="text-6xl lg:text-9xl placecenter mb-9 text-center w-2/3">
+                <h3 className="text-5xl lg:text-9xl placecenter mb-9 text-center w-2/3">
                   {work.service}
                 </h3>
                 <div className="m-services flex flex-col lg:flex-row w-screen">

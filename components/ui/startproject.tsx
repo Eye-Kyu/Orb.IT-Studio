@@ -9,7 +9,7 @@ export default function Startproject() {
         </Flex>
         <div className="project placecenter flex-col mt-9">
           <p>START A</p>
-          <h2 className="mt-16 text-7xl text-center lg:text-8xl headish">
+          <h2 className="mt-16 text-6xl text-center lg:text-8xl headish">
             NEW PROJECT
           </h2>
         </div>
