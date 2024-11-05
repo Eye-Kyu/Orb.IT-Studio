@@ -8,7 +8,9 @@ import Intouch from "@/components/ui/intouch";
 export default function solutions() {
   return (
     <div className="landingly">
-      <Landingpage>OUR STORY</Landingpage>
+      <div className="lg:w-screen w-2/4">
+        <Landingpage>OUR STORY</Landingpage>
+      </div>
       <Mission />
       <Wordloop>OUR APPROACH</Wordloop>
       <Approach />
