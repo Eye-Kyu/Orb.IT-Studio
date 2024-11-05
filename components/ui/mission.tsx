@@ -5,13 +5,12 @@ export default function Mission() {
   return (
     <div>
       <div className="mission-container">
-        <div className="mission-heading fle-col">
-          <h2 className="text-left">TO MAKE THE DIGITAL</h2>
-          <h2 className="ml-24 pl-8">WORLD MORE BEAUTIFUL</h2>
-          <h2 className="ml-64 pl-16">THOUGHTFUL AND</h2>
-          <h2 className="text-right">IMPACTFUL.</h2>
+        <div className="mission-heading fle-col  lg:text-7xl text-5xl">
+          <div className=" text-right">
+            TO MAKE THE DIGITAL WORLD MORE BEAUTIFUL THOUGHTFUL AND IMPACTFUL.
+          </div>
         </div>
-        <div className="mission-statement w-2/4">
+        <div className="mission-statement w-3/4 mt-11 lg:mt-0 lg:w-1/4 lg:text-xs">
           <p>
             We are a team of passionate engineers, designers, and creatives
             dedicated to creating groundbreaking digital experiences that make

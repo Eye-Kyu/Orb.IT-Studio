@@ -21,8 +21,13 @@ export default function Approach() {
     <div>
       <div className="Approach-container w-screen">
         {Approaches.map((item, index) => (
-          <div key={index} className="Approach-item flex mx-28 my-10">
-            <div className="Approach-item-title w-1/4">{item.Method}</div>
+          <div
+            key={index}
+            className="Approach-item lg:flex-row flex-col flex lg:mx-28 my-10"
+          >
+            <div className="Approach-item-title lg:w-1/4 w-screen ">
+              {item.Method}
+            </div>
             <div className="Approach-item-description w-3/4 text-gray-500 ">
               <p>{item.Description}</p>
             </div>

@@ -1,8 +1,10 @@
 export default function Intouch() {
   return (
     <div className="w-screen h-screen">
-      <div className="intouch flex-col items-center justify-center text-center mx-40 my-40">
-        <h1>TALK WITH US</h1>
+      <div className="intouch flex-col items-center justify-center text-center lg:mx-40 mx-7 my-40">
+        <div className="lg:text-8xl lg:text-nowrap text-6xl text-wrap">
+          TALK WITH US
+        </div>
         <p className="mb-20">
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis,
           exercitationem expedita doloribus voluptatibus atque pariatur officiis
@@ -11,7 +13,7 @@ export default function Intouch() {
         </p>
 
         <p>Drop us a line at</p>
-        <h2>hello@Yogi.studio</h2>
+        <div className="lg:text-7xl text-5xl">hello@Yogi.studio</div>
       </div>
     </div>
   );
