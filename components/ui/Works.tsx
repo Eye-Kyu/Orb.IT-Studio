@@ -159,12 +159,12 @@ export default function Works() {
           <div key={index} className="col-lg-4 col-md-6  w-screen">
             <div className="work-item flex flex-col items-center justify-center mt-16 mb-12">
               <div className="work-info flex-col  placecenter ">
-                <h3 className="text-9xl placecenter mb-9 text-center w-2/3">
+                <h3 className="text-6xl lg:text-9xl placecenter mb-9 text-center w-2/3">
                   {work.service}
                 </h3>
-                <div className="m-services flex flex-row w-screen">
-                  <div className=" flex flex-col h-auto w-3/5 ">
-                    <p className="text-center  text-xl mx-12">
+                <div className="m-services flex flex-col lg:flex-row w-screen">
+                  <div className=" flex flex-col h-auto lg:w-3/5 w-screen">
+                    <p className="text-left lg:text-center text-xl mx-12">
                       {work.description}
                     </p>
                     <section className=" placecenter flex gap-2 flex-wrap relative my-9">
@@ -174,7 +174,7 @@ export default function Works() {
                         ))}
                     </section>
                   </div>
-                  <div className="flex w-2/5 mb-4">
+                  <div className="flex w-screen lg:w-2/5 mb-4">
                     <div>{work.img} </div>
                   </div>
                 </div>
