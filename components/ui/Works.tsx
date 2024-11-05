@@ -159,12 +159,12 @@ export default function Works() {
           <div key={index} className="col-lg-4 col-md-6  w-screen">
             <div className="work-item flex flex-col items-center justify-center mt-16 mb-12">
               <div className="work-info flex-col  placecenter ">
-                <h3 className="text-5xl lg:text-9xl placecenter mb-9 text-center w-2/3">
+                <h3 className="text-5xl lg:text-7xl lg:w-4/5 placecenter mb-9 text-center w-2/3">
                   {work.service}
                 </h3>
                 <div className="m-services flex flex-col lg:flex-row w-screen">
                   <div className=" flex flex-col h-auto lg:w-3/5 w-screen">
-                    <p className="text-left lg:text-center text-xl mx-12">
+                    <p className="text-left lg:text-center text-xl mx-7 lg:mx-12">
                       {work.description}
                     </p>
                     <section className=" placecenter flex gap-2 flex-wrap relative my-9">
