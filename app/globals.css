@@ -83,6 +83,10 @@ h3 {
   padding-top: 2em;
   overflow-x: hidden;
 }
+.services {
+  margin-top: 2em;
+}
+
 /*.landingly h1 {
   font-size: 181px;
   line-height: 143px;
@@ -190,32 +194,66 @@ h3 {
 .web-design {
   border-radius: 2%;
   position: absolute;
-  left: 10%;
+  left: 8%;
   rotate: -9deg;
 }
+.web-design-mobile {
+  border-radius: 2%;
+  position: absolute;
+  left: 8%;
+  rotate: -9deg;
+}
+
 .branding {
   border-radius: 5%;
   position: absolute;
-  left: 40%;
+  left: 37%;
   rotate: 20deg;
 }
+.branding-mobile {
+  border-radius: 5%;
+  position: absolute;
+  left: 10%;
+  rotate: 20deg;
+}
+
 .graphic-design {
   border-radius: 5%;
   position: absolute;
   left: 10%;
-  top: 94%;
+  top: 84%;
+  rotate: 40deg;
+}
+.graphic-design-mobile {
+  border-radius: 5%;
+  position: absolute;
+  left: 10%;
+  top: 44%;
   rotate: 40deg;
 }
 .web-dev {
   border-radius: 5%;
   position: absolute;
-  right: 20%;
+  right: 30%;
   top: 50%;
+}
+.web-dev-mobile {
+  border-radius: 5%;
+  position: absolute;
+  right: 30%;
+  top: 20%;
 }
 .product-design {
   border-radius: 5%;
   position: absolute;
-  left: 60%;
+  left: 50%;
+  top: 90%;
+  rotate: -20deg;
+}
+.product-design-mobile {
+  border-radius: 5%;
+  position: absolute;
+  left: 10%;
   top: 90%;
   rotate: -20deg;
 }

@@ -24,7 +24,7 @@ export default function Home() {
         create digital experiences and shape the stories of Tommorrow.
       </Orby>
 
-      <div className="landingly">
+      <div className="lg:landingly landingly">
         <Subtopic>JOIN OUR CREATIVE JOURNEY</Subtopic>
         <Madividi>
           Discover how <span className="underlining">KYU.Firm</span> can

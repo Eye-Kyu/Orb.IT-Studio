@@ -9,45 +9,45 @@ interface Divisions {
 export default function Madividi({ children }: Divisions) {
   return (
     <div className="services h-screen lg:flex lg:flex-row flex-col w-screen">
-      <div className=" half-screen flex lg:w-2/4  lg:leading-12 lg:space-y-12 w-screen">
-        <p className="  text-xl text-wrap lg:text-3xl">{children}</p>
+      <div className=" half-screen flex lg:w-2/4  lg:leading-12 lg:space-y-12 w-11/12  ">
+        <p className="  text-lg text-wrap lg:text-3xl">{children}</p>
       </div>
 
-      <div className="images relative lg:h-72 lg:w-2/4 flex w-screen mt-28 lg:mt-0">
+      <div className="images relative lg:h-72 lg:w-2/4 flex w-screen mt-20 lg:mt-0">
         <Image
-          className="branding"
+          className="lg:branding branding-mobile"
           src="/branding-image.jpg"
-          alt="web design"
-          width={400}
+          alt="Branding"
+          width={300}
           height={670}
         />
 
         <Image
-          className="web-design"
+          className="lg:web-design web-design-mobile"
           src="/static/Web-Design.png"
-          alt="web design"
-          width={300}
+          alt="Web Design"
+          width={250}
           height={770}
         />
         <Image
-          className="product-design"
+          className="lg:product-design product-design-mobile"
           src="/static/Product-Design.jpg"
-          alt="web design"
-          width={300}
+          alt="Product Design"
+          width={250}
           height={770}
         />
         <Image
-          className="graphic-design"
+          className="lg:graphic-design graphic-design-mobile"
           src="/static/graphic-design.png"
-          alt="web design"
-          width={300}
+          alt="Graphic-Design"
+          width={250}
           height={770}
         />
         <Image
-          className="web-dev"
+          className="lg:web-dev web-dev-mobile "
           src="/static/web-dev.png"
-          alt="web design"
-          width={300}
+          alt="Web-Dev"
+          width={250}
           height={770}
         />
       </div>
