@@ -27,7 +27,7 @@ export default function Home() {
       <div className="lg:landingly landingly">
         <Subtopic>JOIN OUR CREATIVE JOURNEY</Subtopic>
         <Madividi>
-          Discover how <span className="underlining">KYU.Firm</span> can
+          Discover how <span className="underlining">YOGI.Studio</span> can
           transform your projects with our innovative designs. Lets create
           something amazing together!!
         </Madividi>
