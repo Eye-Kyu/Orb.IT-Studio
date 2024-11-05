@@ -1,13 +1,13 @@
 export default function Contact() {
   return (
     <div>
-      <div className="w-screen flex landingly h-screen">
-        <div className="w-2/4 space-y-10">
-          <p className="text-4xl">Good things happen when you...</p>
-          <h2>SAY HELLO!!</h2>
+      <div className="w-screen flex flex-col lg:flex-row landingly h-screen">
+        <div className="w-screen lg:w-2/4 space-y-10">
+          <p className="text-2xl lg:text-4xl">Good things happen when you...</p>
+          <div className="lg:text-7xl text-6xl">SAY HELLO!!</div>
         </div>
 
-        <div className="w-2/4">
+        <div className="w-screen lg:w-2/4">
           <form className="grid grid-cols-2 gap-10 pt-9">
             <label className="">
               Name* :
