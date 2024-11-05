@@ -1,7 +1,7 @@
 export default function Intouch() {
   return (
     <div className="w-screen h-screen">
-      <div className="intouch flex-col items-center justify-center text-center lg:mx-40 mx-7 my-40">
+      <div className="intouch flex-col items-center justify-center text-center lg:mx-40 my-40">
         <div className="lg:text-8xl lg:text-nowrap text-6xl text-wrap">
           TALK WITH US
         </div>
