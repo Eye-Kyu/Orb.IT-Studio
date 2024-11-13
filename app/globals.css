@@ -44,6 +44,12 @@ P {
   z-index: 672;
   line-height: 1.8em;
 }
+.heada {
+  font-family: paragraphs;
+}
+.para {
+  font-family: Satoshi;
+}
 h1,
 .hero {
   font-size: 145px;
@@ -112,6 +118,7 @@ h3 {
 @layer base {
   :root {
     --background: 0 0% 100%;
+    --border-border: 45% 10% 10%;
     --foreground: 240 10% 3.9%;
     --card: 0 0% 100%;
     --card-foreground: 240 10% 3.9%;
@@ -140,6 +147,7 @@ h3 {
   .dark {
     --background: 240 10% 3.9%;
     --foreground: 0 0% 98%;
+    --border-border: 85% 40% 30%;
     --card: 240 10% 3.9%;
     --card-foreground: 0 0% 98%;
     --popover: 240 10% 3.9%;
@@ -171,6 +179,7 @@ h3 {
   }
   body {
     @apply bg-background text-foreground;
+    @apply border-border;
   }
 }
 .thirdpager {
@@ -286,4 +295,94 @@ input {
 }
 .Logo {
   font-family: Logo-font;
+}
+
+/*Services IMAGE SHOWN OVER MOUSE MOVE AND HOVER */
+.project {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px 100px 50px 100px;
+  border-top: 1px solid rgb(201, 201, 201);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.project:last-of-type {
+  border-bottom: 1px solid rgb(201, 201, 201);
+}
+
+.project:hover {
+  opacity: 0.5;
+}
+
+.project:hover h2 {
+  transform: translateX(-10px);
+}
+
+.project:hover p {
+  transform: translateX(10px);
+}
+
+.project h2 {
+  font-size: 60px;
+  margin: 0px;
+  font-weight: 400;
+  transition: all 0.4s;
+}
+
+.project p {
+  transition: all 0.4s;
+  font-weight: 300;
+}
+.modalContainer {
+  height: 350px;
+  width: 400px;
+  position: absolute;
+  background-color: white;
+  overflow: hidden;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modalSlider {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  transition: top 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.modal {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal img {
+  height: auto;
+}
+
+.cursor,
+.cursorLabel {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #455ce9;
+  color: white;
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 300;
+  pointer-events: none;
+}
+
+.cursorLabel {
+  background-color: transparent;
 }

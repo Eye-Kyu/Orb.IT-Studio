@@ -5,18 +5,17 @@ import "@radix-ui/themes/styles.css";
 
 import Orby from "@/components/ui/explainer";
 import Subtopic from "@/components/ui/subheader";
-import Titros from "@/components/ui/details";
+//import Titros from "@/components/ui/details";
+import MarqueeDemo from "@/components/ui/marquee";
 import Madividi from "@/components/ui/divs";
 import Centertext from "@/components/ui/centrewriting";
 import Miniservices from "@/components/ui/mini-services";
-import Services from "@/components/ui/service";
+import { HoverImageLinks } from "@/components/ui/service";
 import Landingpage from "@/components/ui/hero";
 
 export default function Home() {
   return (
     <div className="h-auto w-screen">
-      <div className=""></div>
-
       <Landingpage>MAKE WAVES...NOT RIPPLES </Landingpage>
 
       <Orby>
@@ -32,13 +31,13 @@ export default function Home() {
           something amazing together!!
         </Madividi>
 
-        <Services />
+        <HoverImageLinks />
 
         <div className=" flex flex-col w-screen h-92 overflow-x-hidden space-y-12 lg:mt-8">
           <Subtopic>LEAVING LASTING IMPRESSIONS</Subtopic>
 
           <div className="relative w-8/12 ml-20 h-3/4">
-            <Titros />
+            <MarqueeDemo />
           </div>
         </div>
 
