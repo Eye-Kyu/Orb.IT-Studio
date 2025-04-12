@@ -1,26 +1,32 @@
-import {
+/*import {
   Sheet,
   SheetContent,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import { Button } from "./button";
+import Link from "next/link";
+*/
 import {
   NavigationMenu,
   NavigationMenuItem,
   NavigationMenuList,
 } from "@/components/ui/navigation-menu";
-import { Button } from "./button";
+
+import MainDock from "./dockmain";
 import Link from "next/link";
 
 function Navbar() {
   return (
+    /*
     <div className="pt-2 mb-8">
       <NavigationMenu className="w-screen">
         <NavigationMenuList className="flex justify-between w-screen lg:px-14 px-2">
           <NavigationMenuItem className="Logo lg:text-2xl text-lg ">
             YOGI.<span className="text-xl">Studio</span>
           </NavigationMenuItem>
+          /*
           <NavigationMenuItem>
             <Sheet>
               <SheetTrigger className="">Menu</SheetTrigger>
@@ -47,6 +53,26 @@ function Navbar() {
                 </SheetHeader>
               </SheetContent>
             </Sheet>
+          </NavigationMenuItem>
+        </NavigationMenuList>
+      </NavigationMenu>
+    </div>
+  );
+  */
+
+    <div className="pt-2 mb-8">
+      <NavigationMenu className="w-screen">
+        <NavigationMenuList className="flex justify-between w-screen lg:px-14 px-2">
+          <NavigationMenuItem className="Logo lg:text-2xl text-lg ">
+            <Link href="#">
+              YOGI.<span className="text-xl">Studio</span>
+            </Link>
+          </NavigationMenuItem>
+          <NavigationMenuItem>
+            <MainDock />
+          </NavigationMenuItem>
+          <NavigationMenuItem className="twende">
+            <p>TWENDE</p>
           </NavigationMenuItem>
         </NavigationMenuList>
       </NavigationMenu>

@@ -5,6 +5,7 @@ import "@radix-ui/themes/styles.css";
 
 import Orby from "@/components/ui/explainer";
 import Subtopic from "@/components/ui/subheader";
+import "./globals.css";
 //import Titros from "@/components/ui/details";
 import MarqueeDemo from "@/components/ui/marquee";
 import Madividi from "@/components/ui/divs";
@@ -12,6 +13,7 @@ import Centertext from "@/components/ui/centrewriting";
 import Miniservices from "@/components/ui/mini-services";
 import { HoverImageLinks } from "@/components/ui/service";
 import Landingpage from "@/components/ui/hero";
+import MagneticTestimonials from "@/components/ui/testimoni";
 
 export default function Home() {
   return (
@@ -22,19 +24,19 @@ export default function Home() {
         A Digital Design and Tech Studio based in Nairobi. We build brands,
         create digital experiences and shape the stories of Tommorrow.
       </Orby>
+      <Subtopic>JOIN OUR CREATIVE JOURNEY</Subtopic>
+      <Madividi>
+        Discover how <span className="underlining">YOGI.Studio</span> can
+        transform your projects with our innovative designs. Lets create
+        something amazing together!!
+      </Madividi>
 
       <div className="lg:landingly landingly">
-        <Subtopic>JOIN OUR CREATIVE JOURNEY</Subtopic>
-        <Madividi>
-          Discover how <span className="underlining">YOGI.Studio</span> can
-          transform your projects with our innovative designs. Lets create
-          something amazing together!!
-        </Madividi>
-
         <HoverImageLinks />
 
         <div className=" flex flex-col w-screen h-92 overflow-x-hidden space-y-12 lg:mt-8">
           <Subtopic>LEAVING LASTING IMPRESSIONS</Subtopic>
+          <MagneticTestimonials />
 
           <div className="relative w-8/12 ml-20 h-3/4">
             <MarqueeDemo />

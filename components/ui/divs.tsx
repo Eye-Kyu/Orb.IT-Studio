@@ -8,9 +8,11 @@ interface Divisions {
 
 export default function Madividi({ children }: Divisions) {
   return (
-    <div className="services h-screen lg:flex lg:flex-row flex-col w-screen">
-      <div className=" half-screen flex lg:w-2/4  lg:leading-12 lg:space-y-12 w-11/12  ">
-        <p className="  text-lg text-wrap lg:text-3xl">{children}</p>
+    <div className="services h-screen lg:h-[50vh] lg:flex lg:flex-row flex-col w-screen">
+      <div className=" half-screen flex lg:w-2/4 w-11/12  ">
+        <p className="  text-lg text-wrap lg:text-2xl lg:leading-snug">
+          {children}
+        </p>
       </div>
 
       <div className="images relative lg:h-72 lg:w-2/4 flex w-screen mt-20 lg:mt-0">

@@ -8,12 +8,14 @@ export default function solutions() {
   return (
     <div>
       <SolutionsLanding />
-      <Orby>
-        {" "}
+
+      {/* <Orby>
+       
         We are a creative agency that offers unique ... A Digital Design and
         Tech Studio based in Nairobi. We build brands, create digital
         experiences and shape the stories of Tommorrow.
       </Orby>
+       */}
       <Works />
       <Startproject />
     </div>

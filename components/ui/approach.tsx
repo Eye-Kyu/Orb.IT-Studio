@@ -25,10 +25,10 @@ export default function Approach() {
             key={index}
             className="Approach-item lg:flex-row flex-col flex lg:mx-28 my-10"
           >
-            <div className="Approach-item-title lg:w-1/4 w-screen ">
+            <div className="Approach-item-title lg:w-1/4 w-screen para lg:text-lg">
               {item.Method}
             </div>
-            <div className="Approach-item-description w-3/4 text-gray-500 ">
+            <div className="Approach-item-description w-3/4 text-gray-900 lg:text-base ">
               <p>{item.Description}</p>
             </div>
           </div>

@@ -1,3 +1,5 @@
+import { Button } from "@/components/ui/button";
+
 export default function Contact() {
   return (
     <div>
@@ -12,7 +14,7 @@ export default function Contact() {
             <label className="">
               Name* :
               <input
-                className="mt-3"
+                className="mt-3 text-black"
                 type="text"
                 name="name"
                 required
@@ -21,32 +23,52 @@ export default function Contact() {
             </label>
             <label>
               Email* :
-              <input type="email" name="email" required className="mt-3" />
+              <input
+                type="email"
+                name="email"
+                required
+                className="mt-3  text-black"
+              />
             </label>
             <label>
               Company Name* :
-              <input type="text" name="origin" required className="mt-3" />
+              <input
+                type="text"
+                name="origin"
+                required
+                className="mt-3  text-black"
+              />
             </label>
             <label>
               Budget :
-              <input type="number" name="budget" className="mt-3" />
+              <input type="number" name="budget" className="mt-3  text-black" />
             </label>
             <label>
               Where did you hear about us?* :
-              <input type="text" name="origin" required className="mt-3" />
+              <input
+                type="text"
+                name="origin"
+                required
+                className="mt-3  text-black"
+              />
             </label>
             <label className="col-span-full">
               Message :
               <textarea
-                className="mb-9 mt-3"
+                className="mb-9 mt-3  text-black"
                 name="message"
                 required
                 placeholder="Enter your Message here"
               ></textarea>
             </label>
-            <button type="submit" value="Submit">
+
+            <Button
+              type="submit"
+              value="Submit"
+              className="lg:w-20 bg-yellow-600 text-black text-lg rounded-lg shadow-neutral-950"
+            >
               Submit
-            </button>
+            </Button>
           </form>
         </div>
       </div>

@@ -90,7 +90,7 @@ export const HoverImageLinks = () => {
       </div>
 
       <section className="p-4 md:p-8">
-        <div className="mx-auto max-w-5xl">
+        <div className="mx-auto max-w-4xl">
           <Link
             heading="IT Consulting Services"
             subheading="weaving technology’s threads into a seamless fabric, guiding businesses through the digital maze toward clarity, growth, and transformation"
@@ -183,7 +183,7 @@ const Link = ({ heading, imgSrc, subheading, href }: LinkProps) => {
       onMouseMove={handleMouseMove}
       initial="initial"
       whileHover="whileHover"
-      className="group relative flex items-center justify-between border-b-2 border-neutral-700 py-4 transition-colors duration-500 hover:border-neutral-50 md:py-8"
+      className="group relative flex items-center justify-between border-b-[1px] border-neutral-700 py-2 transition-colors duration-500 hover:border-teal-500 md:py-8"
     >
       <div>
         <motion.span
@@ -196,7 +196,7 @@ const Link = ({ heading, imgSrc, subheading, href }: LinkProps) => {
             staggerChildren: 0.055,
             delayChildren: 0.18,
           }}
-          className="relative heada z-10 block text-4xl font-bold text-neutral-500 transition-colors duration-500 group-hover:text-teal-600 md:text-6xl mix-blend-difference"
+          className="relative para block lg:text-5xl font-thin text-gray-800 tracking-tight transition-colors duration-500 group-hover:text-teal-600 md:text-6xl mix-blend-difference"
         >
           {heading.split("").map((l, i) => (
             <motion.span
@@ -212,7 +212,7 @@ const Link = ({ heading, imgSrc, subheading, href }: LinkProps) => {
             </motion.span>
           ))}
         </motion.span>
-        <span className="relative para z-10 mt-2 block text-base text-neutral-500 transition-colors duration-500 group-hover:text-neutral-100 mix-blend-difference">
+        <span className="relative z-[1] para mt-2 block text-base transition-colors duration-500 group-hover:text-black mix-blend-darken">
           {subheading}
         </span>
       </div>
@@ -247,9 +247,7 @@ const Link = ({ heading, imgSrc, subheading, href }: LinkProps) => {
         }}
         transition={{ type: "spring" }}
         className="relative z-10 p-4"
-      >
-        <FiArrowRight className="text-5xl text-teal-400" />
-      </motion.div>
+      ></motion.div>
     </motion.a>
   );
 };

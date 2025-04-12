@@ -12,7 +12,7 @@ export default function Works() {
     {
       service: "WEB DESIGN",
       description:
-        "We set ourself apart with a unique blend of artistic design, technical expertise, and a client-focused approach. Viewing web design as an immersive brand experience, We prioritize personalization over templates, ensuring each project reflects the your voice and resonates with your target audiences. By utilizing the latest design trends and technologies, from responsive layouts to interactive features, we create visually stunning, highly functional websites. Our collaborative process, which emphasizes close client engagement, guarantees that each site aligns with brand identity and adapts to evolving business goals. This commitment to quality and user-centric design has positioned Yogi Studio as a leader in crafting memorable digital experiences that effectively connect brands with their audiences.",
+        "We build custom, mobile-friendly websites that are fast, functional, and SEO-ready. Our web design and development services in Kenya blend modern design with clean code to deliver high-performing websites tailored to your business goals. Whether you need a company site, portfolio, or e-commerce platform — we’ll help you stand out online.",
       img: (
         <Image
           src="/static/web-dev.png"
@@ -33,7 +33,7 @@ export default function Works() {
     {
       service: "GRAPHIC DESIGN",
       description:
-        "We offer graphic design services that combine creativity, precision, and strategic insight to bring brands to life visually. Our approach centers on crafting designs that not only look stunning but also communicate a brand’s message clearly and effectively. From custom illustrations and typography to layout design and color schemes, we tailor each element to reflect the unique identity of our clients. We prioritize collaboration, working closely with clients to understand their goals and preferences, ensuring each design aligns with their vision and resonates with their target audience. Whether it’s for print, digital, or social media, our graphic design services are crafted to make a memorable impact and support cohesive brand storytelling. Through our dedication to quality, personalization, and client partnership, we help brands stand out with visuals that captivate and connect.",
+        "Capture attention with professional graphic design services tailored to your brand. We create eye-catching designs for social media, marketing materials, packaging, and digital campaigns. Every design aligns with your goals and communicates your message clearly. Whether for print or digital, our visuals are crafted to boost engagement and leave a lasting impression.",
       img: (
         <Image
           src="/static/graphic-design.png"
@@ -48,7 +48,7 @@ export default function Works() {
     {
       service: "BRANDING",
       description:
-        "We specialize in branding, bringing a unique blend of creativity, strategy, and precision to each project. Our approach to branding is rooted in understanding the essence of a brand and translating it into a powerful, cohesive identity that resonates with target audiences. Rather than relying on templates, we tailor each branding package to reflect the distinct voice, vision, and goals of our clients. From logo design and typography to color schemes and messaging, we ensure every element speaks to the brand’s character and purpose. By collaborating closely with our clients, we build a partnership that shapes the creative process, guaranteeing that the final brand identity aligns with the client’s vision and adapts to future growth. Through this client-focused and strategic approach, we empower brands to stand out, tell their story effectively, and leave a lasting impression in the minds of their audience.",
+        "We specialize in creative brand design services that make your business unforgettable. From logo design to brand strategy, we develop cohesive visual identities that resonate with your audience and stand out in crowded markets. Whether you're launching a new venture or refreshing an old brand, we’ll make sure your brand speaks with clarity, style, and purpose.",
       img: (
         <Image
           src="/branding-image.jpg"
@@ -70,7 +70,7 @@ export default function Works() {
     {
       service: "APP DEVELOPMENT",
       description:
-        "We specialize in mobile app development, creating apps that are not only functional but also engaging and user-friendly. Our approach combines cutting-edge technology with thoughtful design, ensuring each app offers an intuitive experience that aligns with our clients’ brand values and objectives. From concept to launch, we work closely with clients to understand their needs, tailoring each app’s features, interface, and flow to provide a seamless user experience. Our team prioritizes performance, security, and scalability, designing apps that are ready to adapt as the brand grows. By focusing on innovation and usability, we build mobile apps that stand out in the market, helping clients connect with their audience in a meaningful, lasting way.",
+        "Turn ideas into reality with our mobile app development services for iOS and Android. We build scalable, user-friendly apps with modern UI/UX, backend support, and post-launch maintenance. Whether you're a startup or enterprise, our apps are designed to engage users, streamline services, and drive results.",
       img: (
         <Image
           src="/static/Web-Design.png"
@@ -91,7 +91,7 @@ export default function Works() {
     {
       service: "IT CONSULTING",
       description:
-        "We offer IT consulting services designed to help businesses leverage technology for growth and efficiency. We focus on understanding our clients' unique needs and challenges, delivering tailored solutions that align with their goals. From optimizing existing systems to implementing new technologies, we work closely with clients to streamline processes, enhance cybersecurity, and ensure scalability. Our team stays current on industry trends and best practices, providing strategic insights that drive innovation and resilience in an ever-evolving tech landscape. With a commitment to reliability and partnership, we empower businesses to adapt, grow, and succeed with technology that works for them.",
+        "Our expert IT consulting services in Kenya are designed to help businesses grow smarter. We offer cloud solutions, IT strategy, system integration, and digital transformation support. Whether you're a startup or scaling enterprise, we provide tailored technology consulting that improves performance, secures your systems, and accelerates success. Let us turn tech confusion into confident progress.",
       img: (
         <Image
           src="/static/Consultation.png"
@@ -106,7 +106,7 @@ export default function Works() {
     {
       service: "DIGITAL MARKETING",
       description:
-        "We provide digital marketing services that drive brand growth and connect businesses with their audience effectively. We develop tailored strategies that combine data-driven insights with creative content, ensuring each campaign reflects our clients' unique goals and brand voice. From social media management and SEO to targeted ads and content creation, we use a multi-channel approach to maximize reach and engagement. By working closely with clients, we adapt our strategies to their evolving needs, delivering results that increase visibility, attract leads, and foster customer loyalty. Through our expertise in digital marketing, we help brands stand out, grow, and achieve lasting success online.",
+        "Grow your business online with our results-driven digital marketing services in Kenya. From SEO and content creation to social media management and paid ads, we craft strategies that increase visibility, drive traffic, and convert leads. Data-backed, creative, and always audience-focused — we help you connect and convert where it matters most.",
       img: (
         <Image
           src="/static/digital-marketing.webp"
@@ -131,7 +131,7 @@ export default function Works() {
     {
       service: "SUPPORT AND MAINTENANCE",
       description:
-        "We offer support and maintenance services to ensure that our clients’ digital platforms run smoothly and efficiently. We understand that consistent performance and quick resolution of issues are essential for a successful online presence, so we provide proactive monitoring, timely updates, and responsive troubleshooting. Our team works closely with clients to understand their specific needs, offering customized support plans that include everything from software updates to performance optimizations. By staying ahead of potential issues and maintaining open communication, we ensure our clients can focus on their business goals with confidence. With our commitment to reliability and client satisfaction, we keep digital platforms secure, up-to-date, and ready to perform at their best.",
+        "Keep your website secure, updated, and running smoothly with our website support and maintenance services. We handle plugin updates, backups, bug fixes, and real-time monitoring — so you can focus on business while we handle the tech. Reliable, responsive, and peace-of-mind included.",
       img: (
         <Image
           src="/static/IT-Maintenance-Support.avif"
@@ -153,24 +153,31 @@ export default function Works() {
   ];
 
   return (
-    <div className="container">
-      <div className="row">
+    <div className="container ">
+      <div className="row ">
         {works.map((work, index) => (
-          <div key={index} className="col-lg-4 col-md-6  w-screen">
+          <div key={index} className="col-lg-4 col-md-6 flex w-screen">
             <div className="work-item flex flex-col items-center justify-center mt-16 mb-12">
               <div className="work-info flex-col  placecenter ">
-                <h3 className="text-5xl lg:text-7xl lg:w-4/5 placecenter mb-9 text-center w-2/3">
+                <h3 className="text-5xl lg:text-6xl lg:w-4/5 placecenter mb-5 text-center w-2/3">
                   {work.service}
                 </h3>
                 <div className="m-services flex flex-col lg:flex-row w-screen">
                   <div className=" flex flex-col h-auto lg:w-3/5 w-screen">
-                    <p className="text-left lg:text-center text-xl mx-7 lg:mx-12">
+                    <p className="text-left lg:text-right text-lg mx-7 lg:mx-12">
                       {work.description}
                     </p>
                     <section className=" placecenter flex gap-2 flex-wrap relative my-9">
                       {work.subservices &&
                         work.subservices.map((subservice, index) => (
-                          <Button key={index}>{subservice}</Button>
+                          <Button
+                            className="border-black rounded-2xl hover:bg-yellow-600"
+                            variant="outline"
+                            size="sm"
+                            key={index}
+                          >
+                            {subservice}
+                          </Button>
                         ))}
                     </section>
                   </div>
