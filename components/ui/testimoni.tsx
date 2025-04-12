@@ -97,23 +97,23 @@ const testimonials = [
   {
     id: 1,
     content:
-      "The attention to detail and innovative approach sets them apart. Absolutely outstanding work!",
-    author: "Sarah Chen",
-    role: "Product Director, Innovatech",
+      "Great work, communicaion was timely and clear.I am in awe of the results. Highly recommend!",
+    author: "Brian Mwangi",
+    role: "Founder, Mwakie Visuals",
   },
   {
     id: 2,
     content:
-      "Their creative solutions transformed our business. The results speak for themselves.",
-    author: "Marcus Rodriguez",
-    role: "CEO, TechFlow Systems",
+      "Over the years, The Agency Creative have worked with us on everything from brand design, video, photography, copy, online and print. Projects are always approached with enthusiasm, care and a focus to deliver on-time and within the agreed budget",
+    author: "Njoroge Muiruri",
+    role: "Creative Executive, Kyu.Firm",
   },
   {
     id: 3,
     content:
-      "A game-changing partnership that elevated our entire digital presence.",
-    author: "Emily Watson",
-    role: "Marketing Lead, DigitalFirst",
+      "I worked with the team to create our branding and website for our Restaurant. The Agency Creative helped us to create this by understanding what we wanted to achieve. Our branding that we achieved is exactly what we set out to achieve and we are very happy with all of the work. I would highly recommend The Agency Creative",
+    author: "Kaggia Nganga",
+    role: "Managing Director, Hatespeare",
   },
 ];
 

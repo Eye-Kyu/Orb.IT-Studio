@@ -79,7 +79,6 @@ export default function Services({ ...props }) {
 "use client";
 import { useMotionValue, motion, useSpring, useTransform } from "framer-motion";
 import React, { useRef } from "react";
-import { FiArrowRight } from "react-icons/fi";
 import Subtopic from "./subheader";
 
 export const HoverImageLinks = () => {

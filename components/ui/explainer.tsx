@@ -1,5 +1,4 @@
 import "@radix-ui/themes/styles.css";
-import { Button } from "@/components/ui/button";
 import { ReactNode } from "react";
 
 interface OrbyProps {

@@ -1,6 +1,5 @@
 import "@radix-ui/themes/styles.css";
 import SolutionsLanding from "@/components/ui/solutionslanding";
-import Orby from "@/components/ui/explainer";
 import Works from "@/components/ui/Works";
 import Startproject from "@/components/ui/startproject";
 

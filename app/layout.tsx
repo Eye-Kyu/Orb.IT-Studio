@@ -5,7 +5,6 @@ import Navbar from "@/components/ui/navbar";
 import "@radix-ui/themes/styles.css";
 import Footer from "@/components/ui/footer";
 import SmoothScroll from "../components/ui/smoothscroll";
-import { AuroraBackground } from "../components/ui/aurora-background";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -39,11 +38,9 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <SmoothScroll>
-          <AuroraBackground>
-            <Navbar></Navbar>
-            {children}
-            <Footer></Footer>
-          </AuroraBackground>
+          <Navbar></Navbar>
+          {children}
+          <Footer></Footer>
         </SmoothScroll>
       </body>
     </html>
