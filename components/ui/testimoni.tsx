@@ -104,14 +104,14 @@ const testimonials = [
   {
     id: 2,
     content:
-      "Over the years, The Agency Creative have worked with us on everything from brand design, video, photography, copy, online and print. Projects are always approached with enthusiasm, care and a focus to deliver on-time and within the agreed budget",
+      "The Agency Creative has delivered brand design, video, photography, copy, and more—always with enthusiasm, care, and on-time, on-budget execution across all projects.",
     author: "Njoroge Muiruri",
     role: "Creative Executive, Kyu.Firm",
   },
   {
     id: 3,
     content:
-      "I worked with the team to create our branding and website for our Restaurant. The Agency Creative helped us to create this by understanding what we wanted to achieve. Our branding that we achieved is exactly what we set out to achieve and we are very happy with all of the work. I would highly recommend The Agency Creative",
+      "The Agency Creative brought our restaurant brand and website to life by truly understanding our vision. The final result exceeded expectations—professional, on point, and highly recommended.",
     author: "Kaggia Nganga",
     role: "Managing Director, Hatespeare",
   },
