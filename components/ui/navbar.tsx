@@ -1,13 +1,6 @@
-/*import {
-  Sheet,
-  SheetContent,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from "@/components/ui/sheet";
-import { Button } from "./button";
-import Link from "next/link";
-*/
+"use client";
+
+import { useEffect, useState } from "react";
 import {
   NavigationMenu,
   NavigationMenuItem,
@@ -18,54 +11,41 @@ import MainDock from "./dockmain";
 import Link from "next/link";
 
 function Navbar() {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    /*
-    <div className="pt-2 mb-8">
+    <div className="pt-2 mb-8 fixed top-0 left-0 w-full z-[50]">
       <NavigationMenu className="w-screen">
         <NavigationMenuList className="flex justify-between w-screen lg:px-14 px-2">
-          <NavigationMenuItem className="Logo lg:text-2xl text-lg ">
-            YOGI.<span className="text-xl">Studio</span>
-          </NavigationMenuItem>
-          /*
-          <NavigationMenuItem>
-            <Sheet>
-              <SheetTrigger className="">Menu</SheetTrigger>
-              <SheetContent className="flex-col space-y-12">
-                <SheetHeader>
-                  <SheetTitle className="boldentext">
-                    <Link href="/"> HOME</Link>
-                  </SheetTitle>
-                  <SheetTitle className="boldentext">
-                    <Link href="/solutions"> SOLUTIONS</Link>
-                  </SheetTitle>
-                  <SheetTitle className="boldentext">
-                    <Link href="/agency"> AGENCY</Link>
-                  </SheetTitle>
-                  <SheetTitle className="boldentext">PLAYGROUND</SheetTitle>
-
-                  <SheetTitle className="boldentext">
-                    <Link href="/contact"> CONTACT</Link>
-                  </SheetTitle>
-
-                  <Button className="w-2/4 m-auto rounded-md text-1xl">
-                    Start Your Project
-                  </Button>
-                </SheetHeader>
-              </SheetContent>
-            </Sheet>
-          </NavigationMenuItem>
-        </NavigationMenuList>
-      </NavigationMenu>
-    </div>
-  );
-  */
-
-    <div className="pt-2 mb-8">
-      <NavigationMenu className="w-screen">
-        <NavigationMenuList className="flex justify-between w-screen lg:px-14 px-2">
-          <NavigationMenuItem className="Logo lg:text-2xl text-lg ">
-            <Link href="#">
-              YOGI.<span className="text-xl">Studio</span>
+          <NavigationMenuItem className="Logo lg:text-xl text-lg">
+            <Link href="#" className="flex items-baseline">
+              <span
+                className="transition-all duration-300 overflow-hidden inline-block whitespace-nowrap"
+                style={{
+                  maxWidth: scrolled ? "0px" : "80px",
+                  opacity: scrolled ? 0 : 1,
+                }}
+              >
+                Studio
+              </span>
+              <span className="text-4xl">M</span>
+              <span
+                className="text-2xl transition-all duration-300 overflow-hidden inline-block whitespace-nowrap"
+                style={{
+                  maxWidth: scrolled ? "0px" : "120px",
+                  opacity: scrolled ? 0 : 1,
+                }}
+              >
+                IZANI
+              </span>
             </Link>
           </NavigationMenuItem>
           <NavigationMenuItem>
