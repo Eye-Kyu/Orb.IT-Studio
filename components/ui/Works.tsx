@@ -1,7 +1,41 @@
+"use client";
+import { useEffect, useRef } from "react";
 import Image from "next/image";
 import { Button } from "./button";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Works() {
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      containerRef.current
+        ?.querySelectorAll<HTMLElement>(".work-item")
+        .forEach((item) => {
+          gsap.fromTo(
+            item,
+            { y: 70, opacity: 0 },
+            {
+              y: 0,
+              opacity: 1,
+              duration: 0.9,
+              ease: "power3.out",
+              scrollTrigger: {
+                trigger: item,
+                start: "top 88%",
+                toggleActions: "play none none none",
+              },
+            }
+          );
+        });
+    }, containerRef);
+
+    return () => ctx.revert();
+  }, []);
+
   const imageStyle = {
     borderTopRightRadius: "8%",
     borderBottomLeftRadius: "8%",
@@ -19,6 +53,7 @@ export default function Works() {
           alt="Web design"
           width="470"
           height="550"
+          sizes="(max-width: 768px) 100vw, 50vw"
           style={imageStyle}
         />
       ),
@@ -40,6 +75,7 @@ export default function Works() {
           alt="Graphic Design"
           width="400"
           height="700"
+          sizes="(max-width: 768px) 100vw, 50vw"
           style={imageStyle}
         />
       ),
@@ -55,6 +91,7 @@ export default function Works() {
           alt="Branding"
           width="400"
           height="700"
+          sizes="(max-width: 768px) 100vw, 50vw"
           style={imageStyle}
         />
       ),
@@ -77,6 +114,7 @@ export default function Works() {
           alt="App Development"
           width="400"
           height="700"
+          sizes="(max-width: 768px) 100vw, 50vw"
           style={imageStyle}
         />
       ),
@@ -98,6 +136,7 @@ export default function Works() {
           alt="IT Consultation Services"
           width="400"
           height="700"
+          sizes="(max-width: 768px) 100vw, 50vw"
           style={imageStyle}
         />
       ),
@@ -113,6 +152,7 @@ export default function Works() {
           alt="Digital Marketing"
           width="400"
           height="700"
+          sizes="(max-width: 768px) 100vw, 50vw"
           style={imageStyle}
         />
       ),
@@ -138,6 +178,7 @@ export default function Works() {
           alt="Support and Maintenance"
           width="500"
           height="700"
+          sizes="(max-width: 768px) 100vw, 50vw"
           style={imageStyle}
         />
       ),
@@ -153,17 +194,17 @@ export default function Works() {
   ];
 
   return (
-    <div className="container ">
-      <div className="row ">
+    <div className="container" ref={containerRef}>
+      <div className="row">
         {works.map((work, index) => (
-          <div key={index} className="col-lg-4 col-md-6 flex w-screen">
+          <div key={index} className="col-lg-4 col-md-6 flex w-full">
             <div className="work-item flex flex-col items-center justify-center mt-16 mb-12">
               <div className="work-info flex-col  placecenter ">
                 <h3 className="text-5xl lg:text-6xl lg:w-4/5 placecenter mb-5 text-center w-2/3">
                   {work.service}
                 </h3>
-                <div className="m-services flex flex-col lg:flex-row w-screen">
-                  <div className=" flex flex-col h-auto lg:w-3/5 w-screen">
+                <div className="m-services flex flex-col lg:flex-row w-full">
+                  <div className=" flex flex-col h-auto lg:w-3/5 w-full">
                     <p className="text-left lg:text-right text-lg mx-7 lg:mx-12">
                       {work.description}
                     </p>
@@ -181,7 +222,7 @@ export default function Works() {
                         ))}
                     </section>
                   </div>
-                  <div className="flex w-screen lg:w-2/5 mb-4">
+                  <div className="flex w-full lg:w-2/5 mb-4">
                     <div>{work.img} </div>
                   </div>
                 </div>

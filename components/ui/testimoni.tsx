@@ -121,7 +121,7 @@ const MagneticTestimonials = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <div className="relative h-[50vh] w-full bg-gray-200-400 text-black overflow-hidden">
+    <div className="relative min-h-[50vh] h-auto w-full text-black overflow-hidden">
       {/* Interactive background */}
       <div className="absolute inset-0 opacity-30">
         <MagnetLines

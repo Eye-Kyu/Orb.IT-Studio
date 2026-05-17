@@ -1,18 +1,20 @@
-import "@radix-ui/themes/styles.css";
 import FooterLinks from "@/components/ui/links";
-import { Separator, Flex } from "@radix-ui/themes";
 import Link from "next/link";
+
 function Footer() {
   return (
-    <div className=" border h-72 rounded-md relative mt-8">
-      <div className="footing text-center  text-xl  flex flex-row p-5">
-        <div className="w-2/5 lg:text-4xl text-left text-base ">
+    <footer className="border rounded-md relative mt-8 px-4 py-6 lg:px-8">
+      <div className="footing flex flex-col lg:flex-row gap-8 lg:gap-0 text-center lg:text-left">
+        {/* Social media tagline */}
+        <div className="lg:w-2/5 lg:text-4xl text-xl font-light lg:text-left text-center">
           <p>Follow us on Social Media to Stay Updated</p>
         </div>
-        <Flex align="center" gap="4" height="15rem">
-          <Separator color="plum" orientation="vertical" size="4" />
-        </Flex>
-        <div className="flex flex-col w-1/5 justify-center items-center">
+
+        {/* Divider — hidden on mobile */}
+        <div className="hidden lg:flex lg:w-px lg:bg-plum lg:mx-6 lg:self-stretch" />
+
+        {/* Site links */}
+        <div className="flex flex-col lg:w-1/5 justify-center items-center gap-1">
           <FooterLinks>
             <Link href="/">Home</Link>
           </FooterLinks>
@@ -20,33 +22,37 @@ function Footer() {
             <Link href="/solutions">Solutions</Link>
           </FooterLinks>
           <FooterLinks>
-            <Link href="/agency/"> Agency</Link>
+            <Link href="/agency/">Agency</Link>
           </FooterLinks>
           <FooterLinks>
-            <Link href="/contact/"> Contact Us</Link>
+            <Link href="/contact/">Contact Us</Link>
           </FooterLinks>
         </div>
-        <Flex align="center" gap="4" height="15rem">
-          <Separator orientation="vertical" size="4" />
-        </Flex>
-        <div className="flex flex-col w-1/5 justify-center items-center">
+
+        <div className="hidden lg:flex lg:w-px lg:bg-border lg:mx-6 lg:self-stretch" />
+
+        {/* Support links */}
+        <div className="flex flex-col lg:w-1/5 justify-center items-center gap-1">
           <FooterLinks>Support</FooterLinks>
           <FooterLinks>FAQ</FooterLinks>
           <FooterLinks>Articles</FooterLinks>
         </div>
-        <Flex align="center" gap="4" height="15rem">
-          <Separator orientation="vertical" size="4" />
-        </Flex>
-        <div className="flex flex-col w-1/5 justify-center items-center">
+
+        <div className="hidden lg:flex lg:w-px lg:bg-border lg:mx-6 lg:self-stretch" />
+
+        {/* Social links */}
+        <div className="flex flex-col lg:w-1/5 justify-center items-center gap-1">
           <FooterLinks>LinkedIn</FooterLinks>
           <FooterLinks>Instagram</FooterLinks>
-          <FooterLinks>Tik Tok</FooterLinks>
+          <FooterLinks>TikTok</FooterLinks>
         </div>
       </div>
-      <div className="footnote flex lg:text-base relative text-gray-500 mt-4 bottom-0 text-sm text-center">
-        Copyright © 2024 YOGI.Studio. All rights reserved.
+
+      {/* Copyright */}
+      <div className="footnote flex justify-center lg:justify-start text-gray-500 mt-6 text-sm">
+        Copyright &copy; 2024 Studio Mizan. All rights reserved.
       </div>
-    </div>
+    </footer>
   );
 }
 

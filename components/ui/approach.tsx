@@ -2,7 +2,7 @@ const Approaches = [
   {
     Method: "CLOUD TO GROUND APPROACH",
     Description:
-      "At YOGI.Studio, we view problems as untapped opportunities that can be exploited to create innovative solutions. This means dividing our attention to focus onthe bigger picture and identifying the most relevant opportunities while at the same time, analyzing the smaller details that often go unnoticed",
+      "At Studio Mizan, we view problems as untapped opportunities that can be exploited to create innovative solutions. This means dividing our attention to focus onthe bigger picture and identifying the most relevant opportunities while at the same time, analyzing the smaller details that often go unnoticed",
   },
   {
     Method: "STRUCTURED PROBLEM SOLVING",
@@ -19,16 +19,16 @@ const Approaches = [
 export default function Approach() {
   return (
     <div>
-      <div className="Approach-container w-screen">
+      <div className="Approach-container w-full px-4 lg:px-0">
         {Approaches.map((item, index) => (
           <div
             key={index}
-            className="Approach-item lg:flex-row flex-col flex lg:mx-28 my-10"
+            className="Approach-item lg:flex-row flex-col flex lg:mx-28 my-8 gap-4 lg:gap-0"
           >
-            <div className="Approach-item-title lg:w-1/4 w-screen para lg:text-lg">
+            <div className="Approach-item-title lg:w-1/4 w-full para lg:text-lg font-semibold">
               {item.Method}
             </div>
-            <div className="Approach-item-description w-3/4 text-gray-900 lg:text-base ">
+            <div className="Approach-item-description lg:w-3/4 w-full text-gray-900 lg:text-base">
               <p>{item.Description}</p>
             </div>
           </div>

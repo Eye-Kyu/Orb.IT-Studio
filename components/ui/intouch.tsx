@@ -2,24 +2,22 @@ import { Button } from "./button";
 
 export default function Intouch() {
   return (
-    <div className="w-screen h-screen lg:h-[60vh]">
-      <div className="intouch flex-col items-center justify-center text-center lg:text-wrap lg:m-auto my-40">
-        <div className="lg:text-7xl lg:text-nowrap text-5xl text-wrap">
+    <div className="w-full lg:h-[60vh] px-4 lg:px-0">
+      <div className="intouch flex-col items-center justify-center text-center lg:text-wrap lg:m-auto my-20 lg:my-40">
+        <div className="lg:text-7xl lg:text-nowrap text-3xl sm:text-4xl text-wrap">
           TALK WITH US
         </div>
-        <div className="lg:w-screen w-11/12 m-auto">
-          <p className="mb-20 text-center flex text-wrap lg:mr-28 lg:ml-9">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis,
-            exercitationem expedita doloribus voluptatibus atque pariatur
-            officiis voluptatem a optio ea, nihil vel similique nam quas
-            veritatis eum deserunt qui. Debitis.
+        <div className="w-full lg:w-3/4 m-auto mt-6">
+          <p className="mb-12 lg:mb-20 text-center text-wrap">
+            Have a project in mind or want to learn more about what Studio Mizan
+            can do for you? Reach out — we&apos;d love to hear from you.
           </p>
         </div>
 
         <p>Drop us a line at</p>
-        <div className="lg:text-6xl text-teal-600 text-5xl">
-          <Button className="lg:text-6xl text-teal-600 text-5xl" variant="link">
-            hello@Yogi.studio
+        <div className="lg:text-5xl text-teal-600 text-3xl sm:text-4xl">
+          <Button className="lg:text-5xl text-teal-600 text-3xl sm:text-4xl" variant="link">
+            hello@studiomizan.com
           </Button>
         </div>
       </div>

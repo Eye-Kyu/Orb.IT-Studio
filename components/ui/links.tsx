@@ -1,4 +1,3 @@
-import "@radix-ui/themes/styles.css";
 import { ReactNode } from "react";
 
 interface FooterLinksProps {

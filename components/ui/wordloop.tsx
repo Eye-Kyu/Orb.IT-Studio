@@ -10,7 +10,7 @@ export default function Wordloop({ children }: wordloopProps) {
       <Flex direction="column" gap="4">
         <Separator color="yellow" orientation="horizontal" size="4" />
       </Flex>
-      <div className="text-5xl lg:text-7xl">{children}</div>
+      <div className="text-4xl sm:text-5xl lg:text-7xl">{children}</div>
       <Flex direction="column" gap="4">
         <Separator color="yellow" orientation="horizontal" size="4" />
       </Flex>

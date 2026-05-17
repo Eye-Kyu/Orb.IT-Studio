@@ -23,12 +23,12 @@ function Navbar() {
 
   return (
     <div className="pt-2 mb-8 fixed top-0 left-0 w-full z-[50]">
-      <NavigationMenu className="w-screen">
-        <NavigationMenuList className="flex justify-between w-screen lg:px-14 px-2">
+      <NavigationMenu className="w-full">
+        <NavigationMenuList className="flex justify-between w-full lg:px-14 px-2">
           <NavigationMenuItem className="Logo lg:text-xl text-lg">
             <Link href="#" className="flex items-baseline">
               <span
-                className="transition-all duration-300 overflow-hidden inline-block whitespace-nowrap"
+                className="text-yellow-400 transition-all duration-300 overflow-hidden inline-block whitespace-nowrap"
                 style={{
                   maxWidth: scrolled ? "0px" : "80px",
                   opacity: scrolled ? 0 : 1,

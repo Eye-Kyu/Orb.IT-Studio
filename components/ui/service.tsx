@@ -48,7 +48,7 @@ export default function Services({ ...props }) {
   ];
   return (
     <div className="services flex-col relative">
-      <div className="w-screen block placecenter lg:my-0 my-5">
+      <div className="w-full block placecenter lg:my-0 my-5">
         <Subtopic>What Do We Do. . .</Subtopic>
       </div>
 
@@ -84,7 +84,7 @@ import Subtopic from "./subheader";
 export const HoverImageLinks = () => {
   return (
     <div>
-      <div className="w-screen block placecenter lg:my-0 my-5">
+      <div className="w-full block placecenter lg:my-0 my-5">
         <Subtopic>What Do We Do. . .</Subtopic>
       </div>
 
