@@ -77,8 +77,9 @@ export default function Services({ ...props }) {
 }
 */
 "use client";
-import { useMotionValue, motion, useSpring, useTransform } from "framer-motion";
+import { useMotionValue, motion, useSpring } from "framer-motion";
 import React, { useRef } from "react";
+import { ArrowRight } from "lucide-react";
 import Subtopic from "./subheader";
 
 export const HoverImageLinks = () => {
@@ -148,31 +149,18 @@ interface LinkProps {
 const Link = ({ heading, imgSrc, subheading, href }: LinkProps) => {
   const ref = useRef<HTMLAnchorElement | null>(null);
 
-  const x = useMotionValue(0);
-  const y = useMotionValue(0);
+  const imgX = useMotionValue(0);
+  const imgY = useMotionValue(0);
 
-  const mouseXSpring = useSpring(x);
-  const mouseYSpring = useSpring(y);
-
-  const top = useTransform(mouseYSpring, [0.5, -0.5], ["40%", "60%"]);
-  const left = useTransform(mouseXSpring, [0.5, -0.5], ["60%", "70%"]);
+  const springX = useSpring(imgX, { stiffness: 250, damping: 25 });
+  const springY = useSpring(imgY, { stiffness: 250, damping: 25 });
 
   const handleMouseMove = (
-    e: React.MouseEvent<HTMLAnchorElement, MouseEvent>
+    e: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
   ) => {
     const rect = ref.current!.getBoundingClientRect();
-
-    const width = rect.width;
-    const height = rect.height;
-
-    const mouseX = e.clientX - rect.left;
-    const mouseY = e.clientY - rect.top;
-
-    const xPct = mouseX / width - 0.5;
-    const yPct = mouseY / height - 0.5;
-
-    x.set(xPct);
-    y.set(yPct);
+    imgX.set(e.clientX - rect.left);
+    imgY.set(e.clientY - rect.top);
   };
 
   return (
@@ -182,6 +170,7 @@ const Link = ({ heading, imgSrc, subheading, href }: LinkProps) => {
       onMouseMove={handleMouseMove}
       initial="initial"
       whileHover="whileHover"
+      layout
       className="group relative flex items-center justify-between border-b-[1px] border-neutral-700 py-2 transition-colors duration-500 hover:border-teal-500 md:py-8"
     >
       <div>
@@ -211,15 +200,25 @@ const Link = ({ heading, imgSrc, subheading, href }: LinkProps) => {
             </motion.span>
           ))}
         </motion.span>
-        <span className="relative z-[1] para mt-2 block text-base transition-colors duration-500 group-hover:text-black mix-blend-darken">
-          {subheading}
-        </span>
+
+        <motion.div
+          variants={{
+            initial: { height: 0, opacity: 0 },
+            whileHover: { height: "auto", opacity: 1 },
+          }}
+          transition={{ type: "spring", stiffness: 300, damping: 30 }}
+          className="overflow-hidden"
+        >
+          <span className="relative z-[1] para mt-2 block text-base text-gray-600 mix-blend-darken">
+            {subheading}
+          </span>
+        </motion.div>
       </div>
 
       <motion.img
         style={{
-          top,
-          left,
+          top: springY,
+          left: springX,
           translateX: "-50%",
           translateY: "-50%",
         }}
@@ -235,18 +234,15 @@ const Link = ({ heading, imgSrc, subheading, href }: LinkProps) => {
 
       <motion.div
         variants={{
-          initial: {
-            x: "25%",
-            opacity: 0,
-          },
-          whileHover: {
-            x: "0%",
-            opacity: 1,
-          },
+          initial: { x: "25%", opacity: 0 },
+          whileHover: { x: "0%", opacity: 1 },
         }}
         transition={{ type: "spring" }}
-        className="relative z-10 p-4"
-      ></motion.div>
+        className="relative z-10 p-4 flex flex-col items-center gap-1 text-teal-500 shrink-0"
+      >
+        <ArrowRight size={28} strokeWidth={1.5} />
+        <span className="text-xs tracking-widest uppercase">Learn more</span>
+      </motion.div>
     </motion.a>
   );
 };
