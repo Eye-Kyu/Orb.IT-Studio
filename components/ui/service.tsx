@@ -95,43 +95,43 @@ export const HoverImageLinks = () => {
             heading="IT Consulting Services"
             subheading="weaving technology’s threads into a seamless fabric, guiding businesses through the digital maze toward clarity, growth, and transformation"
             imgSrc="/static/Consultation.png"
-            href="#"
+            href="/solutions/it-consulting"
           />
           <Link
             heading="Brand Design"
             subheading="Weaving identity into every thread, branding tells the story that lingers, the mark that’s unforgettable."
             imgSrc="/branding-image.jpg"
-            href="#"
+            href="/solutions/branding"
           />
           <Link
             heading="Graphic Design"
             subheading="Shaping colors and forms into silent storytellers, graphic design speaks louder than words, leaving an indelible imprint."
             imgSrc="/static/graphic-design.png"
-            href="#"
+            href="/solutions/graphic-design"
           />
           <Link
             heading="Digital Marketing"
             subheading="Casting a net of creativity and strategy, digital marketing reaches hearts and minds, bringing brands to life across the boundless digital sea."
             imgSrc="/static/digital-marketing.webp"
-            href="#"
+            href="/solutions/digital-marketing"
           />
           <Link
             heading="Support & Maintenance"
             subheading="The silent guardians of technology, IT support stands ready, resolving, restoring, and empowering every click and keystroke."
             imgSrc="/static/IT-Maintenance-Support.avif"
-            href="#"
+            href="/solutions/support-maintenance"
           />
           <Link
             heading="Web Design & Development"
             subheading="Weaving identity into every thread, branding tells the story that lingers, the mark that’s unforgettable."
             imgSrc="/static/web-dev.png"
-            href="#"
+            href="/solutions/web-design"
           />
           <Link
             heading="Mobile App Development"
             subheading="Breathing life into ideas, app development builds bridges between dreams and users, one intuitive touch at a time."
             imgSrc="/static/Web-Design.png"
-            href="#"
+            href="/solutions/app-development"
           />
         </div>
       </section>

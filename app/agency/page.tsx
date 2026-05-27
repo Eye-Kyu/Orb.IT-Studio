@@ -1,7 +1,11 @@
 import type { Metadata } from "next";
+import AgencyHero from "@/components/ui/agency-hero";
 import Mission from "@/components/ui/mission";
+import AgencyStats from "@/components/ui/agency-stats";
 import Wordloop from "@/components/ui/wordloop";
 import Approach from "@/components/ui/approach";
+import AgencyValues from "@/components/ui/agency-values";
+import MarqueeDemo from "@/components/ui/marquee";
 import Intouch from "@/components/ui/intouch";
 
 export const metadata: Metadata = {
@@ -21,13 +25,30 @@ export const metadata: Metadata = {
 
 export default function Agency() {
   return (
-    <div className="landingly space-y-36">
-      {/* <Landingpage>OUR STORY</Landingpage> */}
+    <main className="w-full overflow-x-hidden">
+      <AgencyHero />
 
-      <Mission />
+      <section className="py-0">
+        <Mission />
+      </section>
+
+      <AgencyStats />
+
       <Wordloop>OUR APPROACH</Wordloop>
-      <Approach />
+
+      <section>
+        <Approach />
+      </section>
+
+      <section>
+        <AgencyValues />
+      </section>
+
+      <section className="py-8 lg:py-12">
+        <MarqueeDemo />
+      </section>
+
       <Intouch />
-    </div>
+    </main>
   );
 }

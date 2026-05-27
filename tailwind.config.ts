@@ -65,7 +65,8 @@ const config: Config = {
 				},
 				borderColor: {
 					DEFAULT: 'hsl(var(--border))'
-				}
+				},
+				brand: '#EAB308'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

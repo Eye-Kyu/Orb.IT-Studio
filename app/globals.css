@@ -7,6 +7,7 @@
   --background: #ffffff;
   --foreground: #171717;
   --hovered: #ca45db;
+  --brand: #EAB308;
 }
 @font-face {
   font-family: borish;
@@ -31,10 +32,17 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #1c1c1e;
     --foreground: #ededed;
     --hovered: #e756a6;
   }
+}
+
+/* .dark class toggled by ThemeProvider — must mirror the @media block above */
+.dark {
+  --background: #1c1c1e;
+  --foreground: #ededed;
+  --hovered: #e756a6;
 }
 
 body {
@@ -154,13 +162,13 @@ h3 {
     --radius: 0.5rem;
   }
   .dark {
-    --background: 240 10% 3.9%;
-    --foreground: 0 0% 98%;
+    --background: 240 2% 11%;
+    --foreground: 0 0% 93%;
     --border-border: 85% 40% 30%;
-    --card: 240 10% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 240 10% 3.9%;
-    --popover-foreground: 0 0% 98%;
+    --card: 240 2% 11%;
+    --card-foreground: 0 0% 93%;
+    --popover: 240 2% 11%;
+    --popover-foreground: 0 0% 93%;
     --primary: 0 0% 98%;
     --primary-foreground: 240 5.9% 10%;
     --secondary: 240 3.7% 15.9%;
@@ -240,7 +248,7 @@ label {
   color: grey;
 }
 input {
-  color: #ffffff;
+  color: var(--foreground);
 }
 .Logo {
   font-family: Logo-font;

@@ -5,6 +5,9 @@ import Navbar from "@/components/ui/navbar";
 import "@radix-ui/themes/styles.css";
 import Footer from "@/components/ui/footer";
 import SmoothScroll from "../components/ui/smoothscroll";
+import ThemeProvider from "@/components/ui/theme-provider";
+import ScrollColorProvider from "@/components/ui/scroll-color-provider";
+import Cursor from "@/components/ui/cursor";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -126,15 +129,24 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `try{var t=localStorage.getItem('theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.classList.toggle('dark',t==='dark')}catch(e){}`,
+          }}
+        />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <SmoothScroll>
-          <Navbar></Navbar>
-          {children}
-          <Footer></Footer>
-        </SmoothScroll>
+        <ThemeProvider>
+          <Cursor />
+          <ScrollColorProvider />
+          <SmoothScroll>
+            <Navbar />
+            {children}
+            <Footer />
+          </SmoothScroll>
+        </ThemeProvider>
       </body>
     </html>
   );

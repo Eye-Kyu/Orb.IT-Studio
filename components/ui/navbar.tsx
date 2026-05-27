@@ -9,6 +9,7 @@ import {
 
 import MainDock from "./dockmain";
 import Link from "next/link";
+import ThemeToggle from "./theme-toggle";
 
 function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -51,8 +52,8 @@ function Navbar() {
           <NavigationMenuItem>
             <MainDock />
           </NavigationMenuItem>
-          <NavigationMenuItem className="twende">
-            <p>TWENDE</p>
+          <NavigationMenuItem>
+            <ThemeToggle />
           </NavigationMenuItem>
         </NavigationMenuList>
       </NavigationMenu>

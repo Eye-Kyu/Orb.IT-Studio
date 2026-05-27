@@ -1,10 +1,10 @@
 // Scheme 5 colour constants (raw floats — hero.tsx constructs THREE.Vector3 instances)
 export const SCHEME5_COLORS = {
-  C1:       [0.945, 0.353, 0.133] as const, // #F15A22 Orange
+  C1:       [0.918, 0.706, 0.031] as const, // #EAB308 Yellow
   C2:       [0.0,   0.259, 0.22 ] as const, // #004238 Dark Teal
-  C3:       [0.945, 0.353, 0.133] as const, // Orange (repeated)
+  C3:       [0.918, 0.706, 0.031] as const, // Yellow (repeated)
   C4:       [0.0,   0.0,   0.0  ] as const, // #000000 Black
-  C5:       [0.945, 0.353, 0.133] as const, // Orange (repeated)
+  C5:       [0.918, 0.706, 0.031] as const, // Yellow (repeated)
   C6:       [0.0,   0.0,   0.0  ] as const, // Black (repeated)
   DARK_NAVY:[0.039, 0.055, 0.153] as const, // #0a0e27
 } as const;
