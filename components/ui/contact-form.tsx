@@ -122,7 +122,7 @@ export default function ContactForm() {
           THANK YOU.
         </h3>
         <p className="text-base opacity-55 leading-relaxed max-w-sm">
-          Your message is in. We'll get back to you within 24 hours — usually sooner.
+          Your message is in. We&apos;ll get back to you within 24 hours — usually sooner.
         </p>
         <Link
           href="/"

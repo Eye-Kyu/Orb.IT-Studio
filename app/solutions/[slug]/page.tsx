@@ -1,6 +1,5 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { getServiceBySlug, getRelatedServices, services } from "@/lib/services-data";
 import ServiceHero from "@/components/ui/service-hero";
