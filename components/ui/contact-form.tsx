@@ -16,6 +16,8 @@ const BUDGET_OPTIONS = [
   "Let's discuss",
 ];
 
+const TIMELINE_OPTIONS = ["ASAP", "Within 1 month", "1-3 months", "Just exploring"];
+
 function FloatingLabel({
   id,
   label,
@@ -247,6 +249,34 @@ export default function ContactForm() {
                 Select a range
               </option>
               {BUDGET_OPTIONS.map((opt) => (
+                <option key={opt} value={opt}>
+                  {opt}
+                </option>
+              ))}
+            </select>
+          </div>
+        </div>
+
+        {/* timeline dropdown */}
+        <div className="cf-field">
+          <label
+            htmlFor="timeline"
+            className="block text-[10px] tracking-[0.22em] uppercase opacity-40 mb-3"
+          >
+            Timeline
+          </label>
+          <div style={{ borderBottom: "1px solid #444" }}>
+            <select
+              id="timeline"
+              name="timeline"
+              disabled={isPending}
+              defaultValue=""
+              className="w-full bg-transparent pb-2 pt-1 text-sm outline-none appearance-none cursor-pointer"
+            >
+              <option value="" disabled>
+                Select a timeline
+              </option>
+              {TIMELINE_OPTIONS.map((opt) => (
                 <option key={opt} value={opt}>
                   {opt}
                 </option>

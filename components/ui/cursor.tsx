@@ -6,6 +6,7 @@ export default function Cursor() {
   const [visible, setVisible] = useState(false);
   const [hovered, setHovered] = useState(false);
   const isTouch = useRef(false);
+  const reducedMotion = useRef(false);
 
   const springConfig = { mass: 0.4, stiffness: 150, damping: 18 };
   const x = useSpring(0, springConfig);
@@ -14,6 +15,11 @@ export default function Cursor() {
   useEffect(() => {
     if (window.matchMedia("(hover: none)").matches) {
       isTouch.current = true;
+      return;
+    }
+
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      reducedMotion.current = true;
       return;
     }
 
@@ -46,7 +52,7 @@ export default function Cursor() {
     };
   }, [visible, x, y]);
 
-  if (isTouch.current) return null;
+  if (isTouch.current || reducedMotion.current) return null;
 
   return (
     <>

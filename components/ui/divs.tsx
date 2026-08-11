@@ -112,7 +112,7 @@ export default function Madividi({ heading, children }: Divisions) {
         />
         <Image
           className="gallery-card"
-          src="/static/Web-Design.png"
+          src="/static/Web-Design.webp"
           alt="Web Design"
           width={250}
           height={770}
@@ -128,7 +128,7 @@ export default function Madividi({ heading, children }: Divisions) {
         />
         <Image
           className="gallery-card"
-          src="/static/graphic-design.png"
+          src="/static/graphic-design.webp"
           alt="Graphic Design"
           width={250}
           height={770}

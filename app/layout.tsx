@@ -66,21 +66,14 @@ export const metadata: Metadata = {
     title: "Studio Mizan | Digital Design & Tech Studio — Nairobi",
     description:
       "We build brands, create digital experiences, and shape the stories of tomorrow. A Digital Design and Tech Studio based in Nairobi, Kenya.",
-    images: [
-      {
-        url: "/og-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Studio Mizan — Digital Design & Tech Studio Nairobi",
-      },
-    ],
+    // Image is supplied automatically by app/opengraph-image.tsx
   },
   twitter: {
     card: "summary_large_image",
     title: "Studio Mizan | Digital Design & Tech Studio — Nairobi",
     description:
       "We build brands, create digital experiences, and shape the stories of tomorrow.",
-    images: ["/og-image.jpg"],
+    // Image is supplied automatically by app/opengraph-image.tsx
     creator: "@studiomizan",
   },
   alternates: {
@@ -93,7 +86,7 @@ const jsonLd = {
   "@type": "ProfessionalService",
   name: "Studio Mizan",
   url: "https://studiomizani.com",
-  logo: "https://studiomizani.com/og-image.jpg",
+  logo: "https://studiomizani.com/apple-icon",
   description:
     "Studio Mizan is a Digital Design and Tech Studio based in Nairobi, Kenya. We build brands, create digital experiences, and shape the stories of tomorrow.",
   address: {

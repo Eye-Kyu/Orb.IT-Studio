@@ -63,7 +63,7 @@ export const services: Service[] = [
     tagline: "Visuals that stop the scroll.",
     description:
       "Capture attention with professional graphic design tailored to your brand. We create eye-catching designs for social media, marketing materials, packaging, and digital campaigns. Every design communicates your message clearly and leaves a lasting impression — for print or digital.",
-    img: "/static/graphic-design.png",
+    img: "/static/graphic-design.webp",
     subservices: ["Logo Design", "Posters & Brochures", "Motion Graphics", "Social Media Assets"],
     process: [
       {
@@ -137,7 +137,7 @@ export const services: Service[] = [
     tagline: "Scalable apps that users actually love.",
     description:
       "Turn ideas into reality with mobile and web app development for iOS and Android. We build scalable, user-friendly apps with modern UI/UX, backend support, and post-launch maintenance. Whether you're a startup or enterprise — our apps are designed to engage users, streamline services, and drive results.",
-    img: "/static/Web-Design.png",
+    img: "/static/Web-Design.webp",
     subservices: [
       "Android App Development",
       "iOS App Development",

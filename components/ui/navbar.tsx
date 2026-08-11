@@ -27,7 +27,7 @@ function Navbar() {
       <NavigationMenu className="w-full">
         <NavigationMenuList className="flex justify-between w-full lg:px-14 px-2">
           <NavigationMenuItem className="Logo lg:text-xl text-lg">
-            <Link href="#" className="flex items-baseline">
+            <Link href="/" className="flex items-baseline">
               <span
                 className="text-yellow-400 transition-all duration-300 overflow-hidden inline-block whitespace-nowrap"
                 style={{

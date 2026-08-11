@@ -1,86 +1,11 @@
-/*
-"use client";
-import "@radix-ui/themes/styles.css";
-import Subtopic from "./subheader";
-import { Separator, Flex } from "@radix-ui/themes";
-
-export default function Services({ ...props }) {
-  <Flex direction="column" gap="4">
-    <Separator orientation="horizontal" size="1" />
-    <Separator orientation="horizontal" size="2" />
-    <Separator orientation="horizontal" size="3" />
-    <Separator orientation="horizontal" size="4" />
-  </Flex>;
-
-  const Maservices = [
-    {
-      id: "1",
-      Solution: "IT Consulting Services",
-    },
-    {
-      id: "2",
-      Solution: "Brand Design",
-    },
-    {
-      id: "3",
-      Solution: "Graphic Design",
-    },
-    {
-      id: "4",
-      Solution: "Digital Marketing",
-    },
-    {
-      id: "5",
-      Solution: "Support & Maintenance",
-    },
-    {
-      id: "6",
-      Solution: "Web Design & Development",
-    },
-    {
-      id: "7",
-      Solution: "Mobile App Development",
-    },
-    {
-      id: "8",
-      Solution: "Search Engine Optimisation",
-    },
-  ];
-  return (
-    <div className="services flex-col relative">
-      <div className="w-full block placecenter lg:my-0 my-5">
-        <Subtopic>What Do We Do. . .</Subtopic>
-      </div>
-
-      <div className="flex flex-col lg:space-y-11 space-y-6">
-        <div className="flex-col flex">
-          <ul {...props} className="h-auto lg:h-screen flex-col ">
-            {Maservices.map((service) => (
-              <li
-                key={service.id}
-                className="cursor-pointer hover:text-teal-700 h-20 justify-center items-center"
-              >
-                <div className="lg:text-3xl">
-                  <Flex direction="column" gap="4">
-                    <Separator orientation="horizontal" size="4" />
-
-                    <p className="lg:text-5xl text-2xl">{service.Solution}</p>
-                  </Flex>
-                </div>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
-    </div>
-  );
-}
-*/
 "use client";
 import { useMotionValue, motion, useSpring } from "framer-motion";
 import React, { useRef } from "react";
 import { ArrowRight } from "lucide-react";
+import NextLink from "next/link";
 import Subtopic from "./subheader";
+
+const MotionNextLink = motion.create(NextLink);
 
 export const HoverImageLinks = () => {
   return (
@@ -106,7 +31,7 @@ export const HoverImageLinks = () => {
           <Link
             heading="Graphic Design"
             subheading="Shaping colors and forms into silent storytellers, graphic design speaks louder than words, leaving an indelible imprint."
-            imgSrc="/static/graphic-design.png"
+            imgSrc="/static/graphic-design.webp"
             href="/solutions/graphic-design"
           />
           <Link
@@ -130,7 +55,7 @@ export const HoverImageLinks = () => {
           <Link
             heading="Mobile App Development"
             subheading="Breathing life into ideas, app development builds bridges between dreams and users, one intuitive touch at a time."
-            imgSrc="/static/Web-Design.png"
+            imgSrc="/static/Web-Design.webp"
             href="/solutions/app-development"
           />
         </div>
@@ -164,7 +89,7 @@ const Link = ({ heading, imgSrc, subheading, href }: LinkProps) => {
   };
 
   return (
-    <motion.a
+    <MotionNextLink
       href={href}
       ref={ref}
       onMouseMove={handleMouseMove}
@@ -243,6 +168,6 @@ const Link = ({ heading, imgSrc, subheading, href }: LinkProps) => {
         <ArrowRight size={28} strokeWidth={1.5} />
         <span className="text-xs tracking-widest uppercase">Learn more</span>
       </motion.div>
-    </motion.a>
+    </MotionNextLink>
   );
 };
