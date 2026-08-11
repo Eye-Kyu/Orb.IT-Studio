@@ -6,7 +6,7 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://studiomizan.com/sitemap.xml",
-    host: "https://studiomizan.com",
+    sitemap: "https://studiomizani.com/sitemap.xml",
+    host: "https://studiomizani.com",
   };
 }

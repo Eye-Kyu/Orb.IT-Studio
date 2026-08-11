@@ -24,10 +24,10 @@ export function generateMetadata({ params }: PageProps): Metadata {
     openGraph: {
       title: `${service.title} | Studio Mizan`,
       description: service.tagline,
-      url: `https://studiomizan.com/solutions/${service.slug}`,
+      url: `https://studiomizani.com/solutions/${service.slug}`,
     },
     alternates: {
-      canonical: `https://studiomizan.com/solutions/${service.slug}`,
+      canonical: `https://studiomizani.com/solutions/${service.slug}`,
     },
   };
 }

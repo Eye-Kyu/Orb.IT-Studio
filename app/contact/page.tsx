@@ -10,10 +10,10 @@ export const metadata: Metadata = {
     title: "Contact Us | Studio Mizan",
     description:
       "Reach out to Studio Mizan for enquiries, collaborations, or support. We are here to help you achieve your goals.",
-    url: "https://studiomizan.com/contact",
+    url: "https://studiomizani.com/contact",
   },
   alternates: {
-    canonical: "https://studiomizan.com/contact",
+    canonical: "https://studiomizani.com/contact",
   },
 };
 

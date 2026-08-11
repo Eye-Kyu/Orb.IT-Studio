@@ -125,10 +125,10 @@ export default function ContactHeroAndLayout() {
               Reach Us
             </p>
             <a
-              href="mailto:hello@studiomizan.com"
+              href="mailto:hello@studiomizani.com"
               className="text-sm text-teal-600 hover:text-teal-500 transition-colors duration-200"
             >
-              hello@studiomizan.com
+              hello@studiomizani.com
             </a>
           </div>
 

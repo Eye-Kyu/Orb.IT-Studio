@@ -12,7 +12,7 @@ import MagneticTestimonials from "@/components/ui/testimoni";
 
 export const metadata: Metadata = {
   alternates: {
-    canonical: "https://studiomizan.com",
+    canonical: "https://studiomizani.com",
   },
 };
 

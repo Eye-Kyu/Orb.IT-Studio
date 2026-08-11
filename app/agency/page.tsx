@@ -16,10 +16,10 @@ export const metadata: Metadata = {
     title: "Our Agency | Studio Mizan",
     description:
       "Passionate engineers, designers, and creatives dedicated to building groundbreaking digital experiences that make the world a better place.",
-    url: "https://studiomizan.com/agency",
+    url: "https://studiomizani.com/agency",
   },
   alternates: {
-    canonical: "https://studiomizan.com/agency",
+    canonical: "https://studiomizani.com/agency",
   },
 };
 

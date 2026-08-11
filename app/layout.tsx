@@ -26,7 +26,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://studiomizan.com"),
+  metadataBase: new URL("https://studiomizani.com"),
   title: {
     default: "Studio Mizan | Digital Design & Tech Studio — Nairobi",
     template: "%s | Studio Mizan",
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     "UX design Kenya",
     "creative agency Nairobi",
   ],
-  authors: [{ name: "Studio Mizan", url: "https://studiomizan.com" }],
+  authors: [{ name: "Studio Mizan", url: "https://studiomizani.com" }],
   creator: "Studio Mizan",
   publisher: "Studio Mizan",
   robots: {
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_KE",
-    url: "https://studiomizan.com",
+    url: "https://studiomizani.com",
     siteName: "Studio Mizan",
     title: "Studio Mizan | Digital Design & Tech Studio — Nairobi",
     description:
@@ -84,7 +84,7 @@ export const metadata: Metadata = {
     creator: "@studiomizan",
   },
   alternates: {
-    canonical: "https://studiomizan.com",
+    canonical: "https://studiomizani.com",
   },
 };
 
@@ -92,8 +92,8 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
   name: "Studio Mizan",
-  url: "https://studiomizan.com",
-  logo: "https://studiomizan.com/og-image.jpg",
+  url: "https://studiomizani.com",
+  logo: "https://studiomizani.com/og-image.jpg",
   description:
     "Studio Mizan is a Digital Design and Tech Studio based in Nairobi, Kenya. We build brands, create digital experiences, and shape the stories of tomorrow.",
   address: {
