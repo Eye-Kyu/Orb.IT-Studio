@@ -2,7 +2,7 @@ import { ImageResponse } from "next/og";
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 
-export const alt = "Studio Mizan — Digital Design & Tech Studio Nairobi";
+export const alt = "Studio Mizani — Digital Design & Tech Studio Nairobi";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -39,7 +39,7 @@ export default function Image() {
           }}
         >
           <span style={{ color: "#facc15" }}>Studio</span>
-          <span style={{ marginLeft: 20 }}>Mizan</span>
+          <span style={{ marginLeft: 20 }}>Mizani</span>
         </div>
         <div
           style={{

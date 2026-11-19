@@ -7,7 +7,7 @@ const FOUNDER = {
   name: "Pancrass Njoroge",
   role: "Founder · Design & Engineering",
   photo: "" as string, // e.g. "/team/founder.jpg"
-  bio: "I started Studio Mizan to give businesses here the kind of craft usually reserved for big-budget brands abroad. I design and build every project myself, from the first sketch to the last deploy — so the person you brief is the person who ships.",
+  bio: "I started Studio Mizani to give businesses here the kind of craft usually reserved for big-budget brands abroad. I design and build every project myself, from the first sketch to the last deploy — so the person you brief is the person who ships.",
   links: [
     { label: "GitHub", href: "https://github.com/Eye-Kyu" },
     { label: "LinkedIn", href: "https://www.linkedin.com/company/studiomizan" },

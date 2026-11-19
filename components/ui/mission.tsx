@@ -9,7 +9,7 @@ const MISSION_TEXT =
   "To make the digital world more beautiful, thoughtful, and impactful.";
 
 const BODY =
-  "Studio Mizan is a founder-led studio in Nairobi. You work directly with the person who designs and builds your product — no account managers, no hand-offs. When a project needs more hands, we bring in specialists from a trusted bench of designers, developers and marketers, picked for that job.";
+  "Studio Mizani is a founder-led studio in Nairobi. You work directly with the person who designs and builds your product — no account managers, no hand-offs. When a project needs more hands, we bring in specialists from a trusted bench of designers, developers and marketers, picked for that job.";
 
 export default function Mission() {
   const containerRef = useRef<HTMLDivElement>(null);

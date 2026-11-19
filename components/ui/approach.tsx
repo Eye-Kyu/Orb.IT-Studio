@@ -10,7 +10,7 @@ const Approaches = [
   {
     Method: "CLOUD TO GROUND",
     Description:
-      "At Studio Mizan, we view problems as untapped opportunities. This means holding the bigger picture and the fine details in focus simultaneously — seeing the forest and every single tree. We zoom out to find the highest-leverage opportunities, then zoom in to execute with precision.",
+      "At Studio Mizani, we view problems as untapped opportunities. This means holding the bigger picture and the fine details in focus simultaneously — seeing the forest and every single tree. We zoom out to find the highest-leverage opportunities, then zoom in to execute with precision.",
   },
   {
     Method: "STRUCTURED PROBLEM SOLVING",

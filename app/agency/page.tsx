@@ -9,11 +9,11 @@ import Intouch from "@/components/ui/intouch";
 import Team from "@/components/ui/team";
 
 export const metadata: Metadata = {
-  title: "Our Agency",
+  title: "About — Founder-Led Design & Tech Studio in Nairobi",
   description:
-    "Studio Mizan is a founder-led design and tech studio in Nairobi. Work directly with the person who builds your product, backed by a bench of hand-picked specialists.",
+    "Studio Mizani is a founder-led design and tech studio in Nairobi. Work directly with the person who builds your product, backed by a bench of hand-picked specialists.",
   openGraph: {
-    title: "Our Agency | Studio Mizan",
+    title: "Our Agency | Studio Mizani",
     description:
       "A founder-led design and tech studio in Nairobi, backed by a bench of hand-picked specialists.",
     url: "https://studiomizani.com/agency",

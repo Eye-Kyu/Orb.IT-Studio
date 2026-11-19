@@ -84,7 +84,7 @@ export default function Footer() {
                 className="text-3xl lg:text-4xl leading-none tracking-tight"
                 style={{ fontFamily: "borish" }}
               >
-                STUDIO MIZAN
+                STUDIO MIZANI
               </h2>
             </div>
 
@@ -98,7 +98,7 @@ export default function Footer() {
 
             <a
               href="mailto:hello@studiomizani.com"
-              className="text-sm text-teal-600 hover:text-teal-500 transition-colors duration-200 w-fit lg:text-base"
+              className="text-sm text-[var(--brand-lagoon)] hover:opacity-75 transition-colors duration-200 w-fit lg:text-base"
             >
               hello@studiomizani.com
             </a>
@@ -145,7 +145,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="ft-bottom mt-12 pt-6 border-t border-foreground/10 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
           <p className="text-xs opacity-30 lg:text-sm">
-            &copy; {new Date().getFullYear()} Studio Mizan. All rights reserved.
+            &copy; {new Date().getFullYear()} Studio Mizani. All rights reserved.
           </p>
           <p className="text-xs opacity-25 lg:text-sm">Crafted in Nairobi, Kenya</p>
         </div>

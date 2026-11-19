@@ -123,23 +123,23 @@ export default function SolutionsLanding() {
       {/* top section */}
       <div className="flex flex-col px-4 lg:px-14 pt-10 lg:pt-16 flex-1">
         <p className="sl-label text-xs tracking-[0.25em] uppercase font-satoshi opacity-50 mb-8 lg:text-sm">
-          Studio Mizan / Solutions
+          Studio Mizani / Solutions
         </p>
 
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 lg:gap-0">
           {/* headline */}
-          <div className="flex flex-col">
+          <h1 className="flex flex-col">
             {HEADLINE_LINES.map((line, i) => (
-              <div key={i} className="overflow-hidden leading-none">
-                <h1
-                  className="sl-line text-[clamp(3.2rem,10vw,130px)] tracking-tight leading-[1.05]"
+              <span key={i} className="block overflow-hidden leading-none">
+                <span
+                  className="block sl-line text-[clamp(3.2rem,10vw,130px)] tracking-tight leading-[1.05]"
                   style={{ fontFamily: "borish" }}
                 >
-                  {splitChars(line)}
-                </h1>
-              </div>
+                  {splitChars(line)}{" "}
+                </span>
+              </span>
             ))}
-          </div>
+          </h1>
 
           {/* subtext — right side */}
           <div className="lg:w-1/4 lg:pb-3 space-y-1">

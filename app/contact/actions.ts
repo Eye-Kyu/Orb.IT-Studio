@@ -94,7 +94,7 @@ export async function submitContactForm(
     };
   }
 
-  const fromAddress = process.env.CONTACT_FROM_EMAIL ?? "Studio Mizan <onboarding@resend.dev>";
+  const fromAddress = process.env.CONTACT_FROM_EMAIL ?? "Studio Mizani <onboarding@resend.dev>";
   const toAddress = process.env.CONTACT_TO_EMAIL ?? "hello@studiomizani.com";
 
   const priority = scoreLead(budget, timeline, services.length);
@@ -144,16 +144,16 @@ export async function submitContactForm(
     await resend.emails.send({
       from: fromAddress,
       to: email,
-      subject: "Karibu — we've got your message · Studio Mizan",
+      subject: "Karibu — we've got your message · Studio Mizani",
       text: [
         "Hi there,",
         "",
-        "Thanks for reaching out to Studio Mizan. Your message is in, and you'll hear from us within 24 hours (Nairobi time) — usually sooner.",
+        "Thanks for reaching out to Studio Mizani. Your message is in, and you'll hear from us within 24 hours (Nairobi time) — usually sooner.",
         "",
         ...briefLines,
         "In the meantime, have a look at recent work: https://studiomizani.com/work",
         "",
-        "— Studio Mizan, Nairobi",
+        "— Studio Mizani, Nairobi",
       ].join("\n"),
     });
   } catch (err) {

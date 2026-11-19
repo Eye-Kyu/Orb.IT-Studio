@@ -4,11 +4,11 @@ import { caseStudies } from "@/lib/work-data";
 import WorkCard from "@/components/ui/work-card";
 
 export const metadata: Metadata = {
-  title: "Work",
+  title: "Portfolio — Websites & Apps Built in Nairobi",
   description:
-    "Selected work by Studio Mizan — websites, platforms and products built in Nairobi for logistics, travel, retail, education and more.",
+    "Case studies from Studio Mizani: websites, web apps and platforms designed and built in Nairobi for logistics, travel, retail, education and more.",
   openGraph: {
-    title: "Work | Studio Mizan",
+    title: "Work | Studio Mizani",
     description: "Websites, platforms and products built in Nairobi.",
     url: "https://studiomizani.com/work",
   },
@@ -22,7 +22,7 @@ export default function WorkIndex() {
   return (
     <main id="main" className="w-full overflow-x-hidden">
       <section className="px-4 lg:px-14 pt-28 lg:pt-36 pb-12 lg:pb-20">
-        <p className="text-[10px] tracking-[0.25em] uppercase opacity-40 mb-6 lg:text-[13px]">Studio Mizan / Work</p>
+        <p className="text-[10px] tracking-[0.25em] uppercase opacity-40 mb-6 lg:text-[13px]">Studio Mizani / Work</p>
         <h1
           className="text-[clamp(3.5rem,12vw,150px)] leading-[0.9] tracking-tight"
           style={{ fontFamily: "borish" }}

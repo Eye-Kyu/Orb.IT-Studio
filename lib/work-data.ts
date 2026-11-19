@@ -140,7 +140,7 @@ export const caseStudies: CaseStudy[] = [
     ],
     stack: ["Next.js", "NestJS", "PostgreSQL", "Supabase", "Turborepo"],
     image: "/work/school-manager.png",
-    accent: "#111827",
+    accent: "#4338ca",
     liveUrl: "https://school-management-web-teal.vercel.app",
     repoUrl: "https://github.com/Eye-Kyu/School-Management",
     outcomes: [],

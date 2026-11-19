@@ -4,13 +4,13 @@ import Works from "@/components/ui/Works";
 import Startproject from "@/components/ui/startproject";
 
 export const metadata: Metadata = {
-  title: "Our Solutions",
+  title: "Services — Web Design, Branding & App Development",
   description:
-    "Explore Studio Mizan's full range of solutions: web design & development, branding, graphic design, digital marketing, mobile app development, IT consulting, and more.",
+    "Explore Studio Mizani's full range of solutions: web design & development, branding, graphic design, digital marketing, mobile app development, IT consulting, and more.",
   openGraph: {
-    title: "Our Solutions | Studio Mizan",
+    title: "Our Solutions | Studio Mizani",
     description:
-      "Web design, branding, digital marketing, mobile apps, IT consulting — discover what Studio Mizan can build for you.",
+      "Web design, branding, digital marketing, mobile apps, IT consulting — discover what Studio Mizani can build for you.",
     url: "https://studiomizani.com/solutions",
   },
   alternates: {

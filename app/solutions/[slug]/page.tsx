@@ -7,6 +7,8 @@ import ServiceProcessSection from "@/components/ui/service-process";
 import ServiceSelector from "@/components/ui/service-selector";
 import WorkCard from "@/components/ui/work-card";
 import { getCaseStudiesForService } from "@/lib/work-data";
+import JsonLd from "@/components/ui/json-ld";
+import { breadcrumbSchema, serviceSchema, titleCase } from "@/lib/seo";
 
 interface PageProps {
   params: { slug: string };
@@ -20,11 +22,12 @@ export function generateMetadata({ params }: PageProps): Metadata {
   const service = getServiceBySlug(params.slug);
   if (!service) return {};
 
+  const name = titleCase(service.title);
   return {
-    title: service.title,
+    title: `${name} in Nairobi, Kenya`,
     description: service.description,
     openGraph: {
-      title: `${service.title} | Studio Mizan`,
+      title: `${name} in Nairobi | Studio Mizani`,
       description: service.tagline,
       url: `https://studiomizani.com/solutions/${service.slug}`,
     },
@@ -43,6 +46,14 @@ export default function ServicePage({ params }: PageProps) {
 
   return (
     <main id="main" className="w-full overflow-x-hidden">
+      <JsonLd data={serviceSchema(service.slug)} />
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: "Home", path: "/" },
+          { name: "Solutions", path: "/solutions" },
+          { name: titleCase(service.title), path: `/solutions/${service.slug}` },
+        ])}
+      />
       {/* 1 — Hero */}
       <ServiceHero service={service} />
 

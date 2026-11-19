@@ -100,23 +100,23 @@ export default function ContactHeroAndLayout() {
         />
 
         <p className="ch-label text-[10px] tracking-[0.25em] uppercase opacity-40 mb-6 lg:text-[13px]">
-          Studio Mizan / Contact
+          Studio Mizani / Contact
         </p>
 
         <div className="ch-rule w-full h-px bg-foreground/10 mb-8" />
 
-        <div className="flex flex-col">
+        <h1 className="flex flex-col">
           {HERO_LINES.map((line, i) => (
-            <div key={i} className="overflow-hidden leading-none">
-              <h1
-                className="text-[clamp(4rem,13vw,160px)] leading-[0.9] tracking-tight"
+            <span key={i} className="block overflow-hidden leading-none">
+              <span
+                className="block text-[clamp(4rem,13vw,160px)] leading-[0.9] tracking-tight"
                 style={{ fontFamily: "borish" }}
               >
-                {splitChars(line)}
-              </h1>
-            </div>
+                {splitChars(line)}{" "}
+              </span>
+            </span>
           ))}
-        </div>
+        </h1>
 
         <div className="ch-rule w-full h-px bg-foreground/10 mt-8" />
       </section>
@@ -132,7 +132,7 @@ export default function ContactHeroAndLayout() {
             </p>
             <a
               href="mailto:hello@studiomizani.com"
-              className="text-sm text-teal-600 hover:text-teal-500 transition-colors duration-200 lg:text-base"
+              className="text-sm text-[var(--brand-lagoon)] hover:opacity-75 transition-colors duration-200 lg:text-base"
             >
               hello@studiomizani.com
             </a>

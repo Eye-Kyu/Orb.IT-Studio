@@ -53,7 +53,7 @@ export default function ServiceSelector({ preSelected }: ServiceSelectorProps) {
                 relative text-xs lg:text-sm tracking-wider uppercase px-4 py-2 rounded-full border transition-all duration-250 cursor-pointer
                 ${
                   isSelected
-                    ? "bg-[#EAB308] border-[#EAB308] text-white"
+                    ? "bg-[#EAB308] border-[#EAB308] text-[#171717]"
                     : "border-foreground/25 text-foreground/70 hover:border-[#EAB308]/60 hover:text-foreground"
                 }
               `}
@@ -104,7 +104,7 @@ export default function ServiceSelector({ preSelected }: ServiceSelectorProps) {
             inline-flex items-center gap-2 text-xs tracking-[0.2em] uppercase px-6 py-3 border transition-all duration-250
             ${
               selected.size > 0
-                ? "border-[#EAB308] text-[#EAB308] hover:bg-[#EAB308] hover:text-white"
+                ? "border-[#EAB308] text-[#EAB308] hover:bg-[#EAB308] hover:text-[#171717]"
                 : "border-foreground/15 text-foreground/20 pointer-events-none"
             }
            lg:text-sm`}

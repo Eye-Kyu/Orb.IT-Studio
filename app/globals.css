@@ -3,51 +3,76 @@
 @tailwind utilities;
 
 
+/*
+ * Theme tokens. --background / --foreground are HSL channels so Tailwind's
+ * bg-background, text-foreground and border-foreground/10 utilities work.
+ * Light is the default; .dark (set by ThemeProvider / the inline script in
+ * layout.tsx, from the saved choice or the OS preference) switches to dark.
+ */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: 0 0% 100%;
+  --foreground: 0 0% 9%;
   --hovered: #ca45db;
   --brand: #EAB308;
+  --brand-teal: #004238;
+  --brand-ember: #F15A22;
+  --brand-lagoon: #0d9488;
+  color-scheme: light;
 }
 @font-face {
+  font-display: swap;
   font-family: borish;
   src: url(./fonts/Borish.ttf);
 }
 @font-face {
+  font-display: swap;
   font-family: Outfit;
   src: url(./fonts/Outfit_Complete/Fonts/OTF/Outfit-Thin.otf);
 }
 @font-face {
+  font-display: swap;
   font-family: paragraphs;
   src: url(./fonts/Melodrama_Complete/Fonts/OTF/Melodrama-Light.otf);
 }
 @font-face {
+  font-display: swap;
   font-family: Satoshi;
   src: url(./fonts/Satoshi_Complete/Satoshi_Complete/Fonts/OTF/Satoshi-Light.otf);
 }
 @font-face {
+  font-display: swap;
   font-family: Logo-font;
   src: url(./fonts/Audiowide/Audiowide-Regular.ttf);
 }
 
+.dark {
+  --background: 240 3% 11%;
+  --foreground: 0 0% 93%;
+  --hovered: #e756a6;
+  --brand-lagoon: #2dd4bf;
+  color-scheme: dark;
+}
+
+/* No JS yet (first paint before the inline script runs): follow the OS, unless
+   the visitor explicitly chose light. */
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #1c1c1e;
-    --foreground: #ededed;
-    --hovered: #e756a6;
+  :root:not(.light):not(.dark) {
+    --background: 240 3% 11%;
+    --foreground: 0 0% 93%;
+    --brand-lagoon: #2dd4bf;
+    color-scheme: dark;
   }
 }
 
-/* .dark class toggled by ThemeProvider — must mirror the @media block above */
-.dark {
-  --background: #1c1c1e;
-  --foreground: #ededed;
-  --hovered: #e756a6;
+::selection {
+  background: #EAB308;
+  color: #171717;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
+  color: hsl(var(--foreground));
+  background: hsl(var(--background));
+  transition: background-color 0.3s ease, color 0.3s ease;
   overflow-x: hidden;
   margin: 0;
 }
@@ -134,9 +159,7 @@ h3 {
 }
 @layer base {
   :root {
-    --background: 0 0% 100%;
     --border-border: 45% 10% 10%;
-    --foreground: 240 10% 3.9%;
     --card: 0 0% 100%;
     --card-foreground: 240 10% 3.9%;
     --popover: 0 0% 100%;
@@ -162,8 +185,6 @@ h3 {
     --radius: 0.5rem;
   }
   .dark {
-    --background: 240 2% 11%;
-    --foreground: 0 0% 93%;
     --border-border: 85% 40% 30%;
     --card: 240 2% 11%;
     --card-foreground: 0 0% 93%;
@@ -247,8 +268,14 @@ label {
   font-family: Satoshi;
   color: grey;
 }
-input {
-  color: var(--foreground);
+input,
+textarea,
+select {
+  color: hsl(var(--foreground));
+}
+select option {
+  background: hsl(var(--background));
+  color: hsl(var(--foreground));
 }
 .Logo {
   font-family: Logo-font;
@@ -371,4 +398,10 @@ html {
   outline: 2px solid #eab308;
   outline-offset: 3px;
   border-radius: 2px;
+}
+
+/* Testimonial autoplay progress bar */
+@keyframes testimonial-progress {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
 }

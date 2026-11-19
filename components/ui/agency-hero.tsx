@@ -5,7 +5,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const HEADLINE = ["STUDIO", "MIZAN"];
+const HEADLINE = ["STUDIO", "MIZANI"];
 
 function splitChars(text: string) {
   return text.split("").map((char, i) => (
@@ -100,18 +100,18 @@ export default function AgencyHero() {
       </div>
 
       {/* headline */}
-      <div className="flex flex-col px-4 lg:px-14 flex-1 justify-center py-8">
+      <h1 className="flex flex-col px-4 lg:px-14 flex-1 justify-center py-8">
         {HEADLINE.map((line, i) => (
-          <div key={i} className="overflow-hidden leading-none">
-            <h1
-              className="text-[clamp(4.5rem,14vw,180px)] leading-[0.92] tracking-tight"
+          <span key={i} className="block overflow-hidden leading-none">
+            <span
+              className="block text-[clamp(4.5rem,14vw,180px)] leading-[0.92] tracking-tight"
               style={{ fontFamily: "borish" }}
             >
-              {splitChars(line)}
-            </h1>
-          </div>
+              {splitChars(line)}{" "}
+            </span>
+          </span>
         ))}
-      </div>
+      </h1>
 
       {/* bottom: tagline + scroll indicator */}
       <div className="px-4 lg:px-14 pb-10 lg:pb-14 flex items-end justify-between">

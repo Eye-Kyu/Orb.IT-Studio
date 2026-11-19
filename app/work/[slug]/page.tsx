@@ -4,6 +4,8 @@ import { notFound } from "next/navigation";
 import { caseStudies, getCaseStudy, getNextCaseStudy } from "@/lib/work-data";
 import { services } from "@/lib/services-data";
 import { WorkCover } from "@/components/ui/work-card";
+import JsonLd from "@/components/ui/json-ld";
+import { breadcrumbSchema, caseStudySchema } from "@/lib/seo";
 
 interface PageProps {
   params: { slug: string };
@@ -19,10 +21,10 @@ export function generateMetadata({ params }: PageProps): Metadata {
   const c = getCaseStudy(params.slug);
   if (!c) return {};
   return {
-    title: `${c.client} — ${c.title}`,
+    title: `${c.client} Case Study — ${c.sector}`,
     description: c.summary,
     openGraph: {
-      title: `${c.client} | Studio Mizan`,
+      title: `${c.client} | Studio Mizani`,
       description: c.summary,
       url: `https://studiomizani.com/work/${c.slug}`,
       ...(c.image ? { images: [{ url: c.image }] } : {}),
@@ -46,6 +48,14 @@ export default function CaseStudyPage({ params }: PageProps) {
 
   return (
     <main id="main" className="w-full overflow-x-hidden">
+      <JsonLd data={caseStudySchema(c)} />
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: "Home", path: "/" },
+          { name: "Work", path: "/work" },
+          { name: c.client, path: `/work/${c.slug}` },
+        ])}
+      />
       {/* Header */}
       <section className="px-4 lg:px-14 pt-28 lg:pt-36 pb-10">
         <Link href="/work" className="text-[10px] tracking-[0.25em] uppercase opacity-40 hover:opacity-100 lg:text-[13px]">

@@ -96,7 +96,7 @@ const Link = ({ heading, imgSrc, subheading, href }: LinkProps) => {
       initial="initial"
       whileHover="whileHover"
       layout
-      className="group relative flex items-center justify-between border-b-[1px] border-neutral-700 py-2 transition-colors duration-500 hover:border-teal-500 md:py-8"
+      className="group relative flex items-center justify-between border-b-[1px] border-foreground/20 py-2 transition-colors duration-500 hover:border-[var(--brand-lagoon)] md:py-8"
     >
       <div>
         <motion.span
@@ -109,7 +109,7 @@ const Link = ({ heading, imgSrc, subheading, href }: LinkProps) => {
             staggerChildren: 0.055,
             delayChildren: 0.18,
           }}
-          className="relative para block lg:text-5xl font-thin text-gray-800 tracking-tight transition-colors duration-500 group-hover:text-teal-600 md:text-6xl mix-blend-difference"
+          className="relative para block lg:text-5xl font-thin text-foreground/85 tracking-tight transition-colors duration-500 group-hover:text-[var(--brand-lagoon)] md:text-6xl"
         >
           {heading.split("").map((l, i) => (
             <motion.span
@@ -134,7 +134,7 @@ const Link = ({ heading, imgSrc, subheading, href }: LinkProps) => {
           transition={{ type: "spring", stiffness: 300, damping: 30 }}
           className="overflow-hidden"
         >
-          <span className="relative z-[1] para mt-2 block text-base text-gray-600 mix-blend-darken lg:text-lg">
+          <span className="relative z-[1] para mt-2 block text-base text-foreground/60 lg:text-lg">
             {subheading}
           </span>
         </motion.div>

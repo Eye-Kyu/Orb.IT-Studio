@@ -222,7 +222,7 @@ export default function ContactForm() {
                   aria-pressed={isOn}
                   className={`text-[10px] tracking-wider uppercase px-3.5 py-1.5 rounded-full border transition-all duration-200 ${
                     isOn
-                      ? "bg-[#EAB308] border-[#EAB308] text-white"
+                      ? "bg-[#EAB308] border-[#EAB308] text-[#171717]"
                       : "border-foreground/25 text-foreground/60 hover:border-[#EAB308]/60"
                   } lg:text-[13px]`}
                 >

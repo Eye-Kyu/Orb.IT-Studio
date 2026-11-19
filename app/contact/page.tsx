@@ -3,13 +3,13 @@ import { Suspense } from "react";
 import ContactHeroAndLayout from "@/components/ui/contact-hero-layout";
 
 export const metadata: Metadata = {
-  title: "Contact Us",
+  title: "Contact — Start a Web or Branding Project",
   description:
-    "Get in touch with Studio Mizan. Reach out for enquiries, collaborations, design consultations, or project support. We are based in Nairobi and work globally.",
+    "Get in touch with Studio Mizani. Reach out for enquiries, collaborations, design consultations, or project support. We are based in Nairobi and work globally.",
   openGraph: {
-    title: "Contact Us | Studio Mizan",
+    title: "Contact Us | Studio Mizani",
     description:
-      "Reach out to Studio Mizan for enquiries, collaborations, or support. We are here to help you achieve your goals.",
+      "Reach out to Studio Mizani for enquiries, collaborations, or support. We are here to help you achieve your goals.",
     url: "https://studiomizani.com/contact",
   },
   alternates: {

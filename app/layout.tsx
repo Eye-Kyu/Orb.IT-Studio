@@ -8,6 +8,8 @@ import SmoothScroll from "../components/ui/smoothscroll";
 import ThemeProvider from "@/components/ui/theme-provider";
 import ScrollColorProvider from "@/components/ui/scroll-color-provider";
 import Cursor from "@/components/ui/cursor";
+import JsonLd from "@/components/ui/json-ld";
+import { SITE, organizationSchema } from "@/lib/seo";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -28,13 +30,13 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL("https://studiomizani.com"),
   title: {
-    default: "Studio Mizan | Digital Design & Tech Studio — Nairobi",
-    template: "%s | Studio Mizan",
+    default: "Studio Mizani | Web Design, Branding & App Development in Nairobi",
+    template: "%s | Studio Mizani",
   },
   description:
-    "Studio Mizan is a Digital Design and Tech Studio based in Nairobi. We build brands, create digital experiences, and shape the stories of tomorrow through web design, branding, and digital marketing.",
+    SITE.description,
   keywords: [
-    "Studio Mizan",
+    "Studio Mizani",
     "digital design studio Nairobi",
     "web design Kenya",
     "branding agency Nairobi",
@@ -44,10 +46,14 @@ export const metadata: Metadata = {
     "mobile app development Nairobi",
     "UX design Kenya",
     "creative agency Nairobi",
+    "web design agency Nairobi",
+    "website developer Kenya",
+    "Next.js developer Kenya",
+    "e-commerce website Kenya",
   ],
-  authors: [{ name: "Studio Mizan", url: "https://studiomizani.com" }],
-  creator: "Studio Mizan",
-  publisher: "Studio Mizan",
+  authors: [{ name: "Studio Mizani", url: "https://studiomizani.com" }],
+  creator: "Studio Mizani",
+  publisher: "Studio Mizani",
   robots: {
     index: true,
     follow: true,
@@ -62,15 +68,15 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_KE",
     url: "https://studiomizani.com",
-    siteName: "Studio Mizan",
-    title: "Studio Mizan | Digital Design & Tech Studio — Nairobi",
+    siteName: "Studio Mizani",
+    title: "Studio Mizani | Web Design, Branding & App Development in Nairobi",
     description:
       "We build brands, create digital experiences, and shape the stories of tomorrow. A Digital Design and Tech Studio based in Nairobi, Kenya.",
     // Image is supplied automatically by app/opengraph-image.tsx
   },
   twitter: {
     card: "summary_large_image",
-    title: "Studio Mizan | Digital Design & Tech Studio — Nairobi",
+    title: "Studio Mizani | Web Design, Branding & App Development in Nairobi",
     description:
       "We build brands, create digital experiences, and shape the stories of tomorrow.",
     // Image is supplied automatically by app/opengraph-image.tsx
@@ -79,36 +85,12 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://studiomizani.com",
   },
+  // Set NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION to the code from Google Search Console.
+  ...(process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
+    ? { verification: { google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION } }
+    : {}),
 };
 
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  name: "Studio Mizan",
-  url: "https://studiomizani.com",
-  logo: "https://studiomizani.com/apple-icon",
-  description:
-    "Studio Mizan is a Digital Design and Tech Studio based in Nairobi, Kenya. We build brands, create digital experiences, and shape the stories of tomorrow.",
-  address: {
-    "@type": "PostalAddress",
-    addressLocality: "Nairobi",
-    addressCountry: "KE",
-  },
-  areaServed: "Worldwide",
-  serviceType: [
-    "Web Design",
-    "Web Development",
-    "Brand Design",
-    "Graphic Design",
-    "Digital Marketing",
-    "Mobile App Development",
-    "IT Consulting",
-  ],
-  sameAs: [
-    "https://www.instagram.com/studiomizan",
-    "https://www.linkedin.com/company/studiomizan",
-  ],
-};
 
 export default function RootLayout({
   children,
@@ -116,15 +98,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en-KE">
       <head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        <JsonLd data={organizationSchema()} />
         <script
           dangerouslySetInnerHTML={{
-            __html: `try{var t=localStorage.getItem('theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.classList.toggle('dark',t==='dark')}catch(e){}`,
+            __html: `try{var t=localStorage.getItem('theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');var c=document.documentElement.classList;c.toggle('dark',t==='dark');c.toggle('light',t!=='dark')}catch(e){}`,
           }}
         />
       </head>

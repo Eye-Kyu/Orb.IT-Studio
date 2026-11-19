@@ -332,16 +332,21 @@ export default function Landingpage({ lines }: LandingpageProps) {
             className="flex flex-col items-center gap-2 lg:gap-4 w-full px-6 lg:px-14"
             style={{ mixBlendMode: "screen" }}
           >
+            {/* Visible, keyword-bearing part of the h1 — tells search engines what the studio is */}
+            <span className="block text-[11px] lg:text-sm tracking-[0.3em] uppercase mb-2 lg:mb-4 opacity-80">
+              Studio Mizani · Web design, branding &amp; apps in Nairobi{" "}
+            </span>
             {lines.map((line, lineIdx) => (
               <span key={lineIdx} className="block">
-                {line.split(/\s+/).map((word, wordIdx) => (
-                  <span
-                    key={wordIdx}
-                    className="inline-block overflow-hidden align-bottom mr-[0.2em] last:mr-0"
-                  >
-                    <span className="word-inner inline-block">{word}</span>
+                {line.split(/\s+/).map((word, wordIdx, words) => (
+                  <span key={wordIdx}>
+                    <span className="inline-block overflow-hidden align-bottom">
+                      <span className="word-inner inline-block">{word}</span>
+                    </span>
+                    {/* real spaces so search engines and screen readers see separate words */}
+                    {wordIdx < words.length - 1 ? " " : ""}
                   </span>
-                ))}
+                ))}{" "}
               </span>
             ))}
           </h1>

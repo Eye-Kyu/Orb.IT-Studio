@@ -31,7 +31,7 @@ export default function Home() {
 
       <section className="py-16 lg:py-28">
         <Madividi heading="ONE STUDIO. NO HAND-OFFS.">
-          At <span className="underlining">Studio Mizan</span> the person you
+          At <span className="underlining">Studio Mizani</span> the person you
           brief is the person who designs and builds. From an export logistics
           platform to a school management system, every project goes from
           sketch to launch in the same hands.

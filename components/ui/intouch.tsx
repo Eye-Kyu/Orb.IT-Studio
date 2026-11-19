@@ -108,7 +108,7 @@ export default function Intouch() {
           {/* right: body + CTAs + email */}
           <div className="it-body lg:w-1/2 flex flex-col gap-8 lg:pb-3">
             <p className="text-base lg:text-lg opacity-55 leading-relaxed max-w-md">
-              Have a project in mind? Want to learn more about what Studio Mizan
+              Have a project in mind? Want to learn more about what Studio Mizani
               can do for you? Reach out — we&apos;d love to hear from you.
             </p>
 
@@ -133,7 +133,7 @@ export default function Intouch() {
             {/* email */}
             <a
               href="mailto:hello@studiomizani.com"
-              className="text-sm text-teal-600 hover:text-teal-500 tracking-wide transition-colors duration-200 lg:text-base"
+              className="text-sm text-[var(--brand-lagoon)] hover:opacity-75 tracking-wide transition-colors duration-200 lg:text-base"
             >
               hello@studiomizani.com
             </a>

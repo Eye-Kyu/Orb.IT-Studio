@@ -4,7 +4,7 @@ import { caseStudies } from "@/lib/work-data";
 
 export const metadata: Metadata = {
   title: "Now",
-  description: "What's on the bench at Studio Mizan right now — live from our public repositories.",
+  description: "What's on the bench at Studio Mizani right now — live from our public repositories.",
   alternates: { canonical: "https://studiomizani.com/now" },
 };
 
@@ -78,7 +78,7 @@ export default async function NowPage() {
   return (
     <main id="main" className="w-full overflow-x-hidden">
       <section className="px-4 lg:px-14 pt-28 lg:pt-36 pb-12">
-        <p className="text-[10px] tracking-[0.25em] uppercase opacity-40 mb-6 lg:text-[13px]">Studio Mizan / Now</p>
+        <p className="text-[10px] tracking-[0.25em] uppercase opacity-40 mb-6 lg:text-[13px]">Studio Mizani / Now</p>
         <h1 className="text-[clamp(3.5rem,12vw,150px)] leading-[0.9] tracking-tight" style={{ fontFamily: "borish" }}>
           ON THE BENCH.
         </h1>
