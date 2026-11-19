@@ -1,8 +1,19 @@
 "use client";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
-import * as THREE from "three";
 import { GRAD_VERT, GRAD_FRAG, SCHEME5_COLORS, SCHEME5_PARAMS } from "@/lib/gradient-config";
+import { nairobiNow } from "./nairobi-clock";
+
+type ThreeModule = typeof import("three");
+
+// The hero follows the sun over Nairobi: warm yellow at dawn and golden hour,
+// cooler teal through the day, deep and quiet at night.
+function moodFor(hour: number) {
+  if (hour >= 5 && hour < 9) return { name: "sunrise", w1: 1.1, w2: 1.2, intensity: 1.8 };
+  if (hour >= 9 && hour < 16) return { name: "daylight", w1: 0.5, w2: 1.8, intensity: 1.8 };
+  if (hour >= 16 && hour < 19) return { name: "golden hour", w1: 1.4, w2: 1.0, intensity: 2.0 };
+  return { name: "night", w1: 0.3, w2: 2.4, intensity: 1.4 };
+}
 
 interface LandingpageProps {
   lines: string[];
@@ -12,6 +23,12 @@ export default function Landingpage({ lines }: LandingpageProps) {
   const heroRef      = useRef<HTMLDivElement>(null);      // Three.js mount + hero container
   const containerRef = useRef<HTMLDivElement>(null);      // GSAP 3-D tilt target
   const headingRef   = useRef<HTMLHeadingElement>(null);  // GSAP entrance + parallax drift
+  const [caption, setCaption] = useState<string | null>(null);
+
+  useEffect(() => {
+    const n = nairobiNow();
+    setCaption(`${n.label} in Nairobi · ${moodFor(n.hour).name}`);
+  }, []);
 
   // ── Three.js liquid gradient ─────────────────────────────────────────────
   useEffect(() => {
@@ -20,6 +37,20 @@ export default function Landingpage({ lines }: LandingpageProps) {
     const mount = heroRef.current;
     if (!mount) return;
 
+    // Three.js is loaded on demand so it never blocks first paint.
+    let disposed = false;
+    let cleanup: (() => void) | undefined;
+    import("three").then((THREE) => {
+      if (disposed) return;
+      cleanup = initScene(THREE, mount);
+    });
+    return () => {
+      disposed = true;
+      cleanup?.();
+    };
+  }, []);
+
+  function initScene(THREE: ThreeModule, mount: HTMLDivElement) {
     // Renderer — mounts directly into the hero div
     const renderer = new THREE.WebGLRenderer({
       alpha: true,
@@ -116,7 +147,11 @@ export default function Landingpage({ lines }: LandingpageProps) {
 
     // ── Uniforms ──────────────────────────────────────────────────────────────
     const { C1, C2, C3, C4, C5, C6, DARK_NAVY } = SCHEME5_COLORS;
-    const { SPEED, INTENSITY, GRADIENT_SIZE, GRADIENT_COUNT, W1, W2, GRAIN } = SCHEME5_PARAMS;
+    const { SPEED, GRADIENT_SIZE, GRADIENT_COUNT, GRAIN } = SCHEME5_PARAMS;
+    const mood = moodFor(nairobiNow().hour);
+    const W1 = mood.w1;
+    const W2 = mood.w2;
+    const INTENSITY = mood.intensity;
 
     const v3 = (c: readonly [number, number, number]) => new THREE.Vector3(...c);
 
@@ -205,7 +240,7 @@ export default function Landingpage({ lines }: LandingpageProps) {
       material.dispose();
       touchTexture.dispose();
     };
-  }, []);
+  }
 
   // ── GSAP entrance — word-split slide-up ──────────────────────────────────
   useEffect(() => {
@@ -278,6 +313,12 @@ export default function Landingpage({ lines }: LandingpageProps) {
       ref={heroRef}
       className="landingly relative w-full lg:h-[calc(100vh+80px)] min-h-[calc(80vh+80px)] overflow-hidden"
     >
+      {caption && (
+        <p className="absolute bottom-[calc(80px+1.5rem)] lg:bottom-[calc(80px+2.5rem)] left-0 right-0 z-10 text-center text-[10px] tracking-[0.3em] uppercase text-white/70 mix-blend-difference pointer-events-none lg:text-[13px]">
+          {caption}
+        </p>
+      )}
+
       {/* Text overlay — sits above the gradient (z-10), allows pointer events */}
       <div className="absolute top-0 left-0 right-0 lg:h-screen min-h-[80vh] z-10 flex items-center justify-center text-center pt-24 lg:pt-0">
         <div ref={containerRef} className="w-full">

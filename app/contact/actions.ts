@@ -1,6 +1,15 @@
 "use server";
 
+import { headers } from "next/headers";
 import { Resend } from "resend";
+import {
+  BUDGET_OPTIONS,
+  TIMELINE_OPTIONS,
+  estimateBrief,
+  formatWeeks,
+  sanitizeServices,
+  scoreLead,
+} from "@/lib/brief";
 
 export interface ContactFormState {
   success: boolean;
@@ -9,51 +18,66 @@ export interface ContactFormState {
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-type LeadPriority = "Hot" | "Warm" | "Cold";
+const LIMITS = { name: 100, email: 200, company: 150, referral: 150, message: 5000 };
 
-const BUDGET_SCORES: Record<string, number> = {
-  "Under KSh 50k": 1,
-  "KSh 50k – 150k": 2,
-  "KSh 150k – 500k": 3,
-  "KSh 500k – 1M": 4,
-  "KSh 1M+": 5,
-  "Let's discuss": 3,
-};
+// Best-effort per-IP rate limit. On serverless hosting each instance keeps its
+// own map, so this slows abuse rather than stopping it outright — swap for
+// Upstash/Vercel KV if the form starts getting hammered.
+const WINDOW_MS = 10 * 60 * 1000;
+const MAX_PER_WINDOW = 3;
+const hits = new Map<string, number[]>();
 
-const TIMELINE_SCORES: Record<string, number> = {
-  ASAP: 3,
-  "Within 1 month": 2,
-  "1-3 months": 1,
-  "Just exploring": 0,
-};
+function rateLimited(ip: string) {
+  const now = Date.now();
+  const recent = (hits.get(ip) ?? []).filter((t) => now - t < WINDOW_MS);
+  if (recent.length >= MAX_PER_WINDOW) {
+    hits.set(ip, recent);
+    return true;
+  }
+  recent.push(now);
+  hits.set(ip, recent);
+  if (hits.size > 5000) hits.clear(); // keep memory bounded
+  return false;
+}
 
-function scoreLead(budget: string, timeline: string, servicesCount: number): LeadPriority {
-  const budgetScore = BUDGET_SCORES[budget] ?? 0;
-  const timelineScore = TIMELINE_SCORES[timeline] ?? 0;
-  const servicesScore = servicesCount >= 4 ? 2 : servicesCount >= 2 ? 1 : 0;
+function field(formData: FormData, key: string) {
+  return (formData.get(key)?.toString() ?? "").trim();
+}
 
-  const total = budgetScore + timelineScore + servicesScore;
-
-  if (total >= 7) return "Hot";
-  if (total >= 4) return "Warm";
-  return "Cold";
+function oneLine(s: string) {
+  return s.replace(/[\r\n]+/g, " ");
 }
 
 export async function submitContactForm(
   _prevState: ContactFormState | null,
   formData: FormData
 ): Promise<ContactFormState> {
-  const name = formData.get("name")?.toString().trim();
-  const email = formData.get("email")?.toString().trim();
-  const message = formData.get("message")?.toString().trim();
-  const company = formData.get("company")?.toString().trim();
-  const services = formData.get("services")?.toString().trim();
-  const budget = formData.get("budget")?.toString().trim();
-  const timeline = formData.get("timeline")?.toString().trim();
-  const referral = formData.get("referral")?.toString().trim();
+  // Honeypot: real visitors never see or fill this field.
+  if (field(formData, "website")) return { success: true };
+
+  const name = oneLine(field(formData, "name"));
+  const email = field(formData, "email");
+  const message = field(formData, "message");
+  const company = oneLine(field(formData, "company"));
+  const referral = oneLine(field(formData, "referral"));
+  const rawBudget = field(formData, "budget");
+  const rawTimeline = field(formData, "timeline");
+  const budget = (BUDGET_OPTIONS as readonly string[]).includes(rawBudget) ? rawBudget : "";
+  const timeline = (TIMELINE_OPTIONS as readonly string[]).includes(rawTimeline) ? rawTimeline : "";
+  const services = sanitizeServices(field(formData, "services").split(","));
 
   if (!name || !email || !message) {
     return { success: false, error: "Please fill in all required fields." };
+  }
+
+  if (
+    name.length > LIMITS.name ||
+    email.length > LIMITS.email ||
+    company.length > LIMITS.company ||
+    referral.length > LIMITS.referral ||
+    message.length > LIMITS.message
+  ) {
+    return { success: false, error: "One of the fields is too long — please shorten it." };
   }
 
   const emailRx = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -61,11 +85,21 @@ export async function submitContactForm(
     return { success: false, error: "Please enter a valid email address." };
   }
 
+  const h = headers();
+  const ip = h.get("x-forwarded-for")?.split(",")[0]?.trim() || h.get("x-real-ip") || "unknown";
+  if (rateLimited(ip)) {
+    return {
+      success: false,
+      error: "You've sent a few messages already — please wait a few minutes, or email hello@studiomizani.com.",
+    };
+  }
+
   const fromAddress = process.env.CONTACT_FROM_EMAIL ?? "Studio Mizan <onboarding@resend.dev>";
   const toAddress = process.env.CONTACT_TO_EMAIL ?? "hello@studiomizani.com";
 
-  const servicesCount = services ? services.split(",").filter(Boolean).length : 0;
-  const priority = scoreLead(budget ?? "", timeline ?? "", servicesCount);
+  const priority = scoreLead(budget, timeline, services.length);
+  const estimate = estimateBrief(services, budget, timeline);
+  const serviceTitles = estimate.services.map((s) => s.title).join(", ");
 
   try {
     await resend.emails.send({
@@ -77,21 +111,50 @@ export async function submitContactForm(
         `Name: ${name}`,
         `Email: ${email}`,
         `Company: ${company || "—"}`,
-        `Services: ${services || "—"}`,
+        `Services: ${serviceTitles || "—"}`,
         `Budget: ${budget || "—"}`,
         `Timeline: ${timeline || "—"}`,
         `Referral: ${referral || "—"}`,
+        `Indicative delivery: ${formatWeeks(estimate.weeks)}`,
+        `Fit: ${estimate.fit}`,
         "",
         "Message:",
         message,
       ].join("\n"),
     });
 
+    // Auto-reply deliberately contains no free text typed by the visitor, so the
+    // form can't be used to send arbitrary content from our domain. Services,
+    // budget and timeline are allow-listed values above.
+    const briefLines = estimate.services.length
+      ? [
+          "Here's the brief you put together:",
+          "",
+          `  Services:  ${serviceTitles}`,
+          `  Budget:    ${budget || "Not specified"}`,
+          `  Timeline:  ${timeline || "Not specified"}`,
+          `  Indicative delivery: ${formatWeeks(estimate.weeks)}`,
+          `  Phases:    ${estimate.phases.join(" → ")}`,
+          "",
+          estimate.fitMessage,
+          "",
+        ]
+      : [];
+
     await resend.emails.send({
       from: fromAddress,
       to: email,
-      subject: "We received your message — Studio Mizan",
-      text: `Hi ${name},\n\nThanks for reaching out to Studio Mizan. We've received your message and will get back to you within 24 hours — usually sooner.\n\n— Studio Mizan`,
+      subject: "Karibu — we've got your message · Studio Mizan",
+      text: [
+        "Hi there,",
+        "",
+        "Thanks for reaching out to Studio Mizan. Your message is in, and you'll hear from us within 24 hours (Nairobi time) — usually sooner.",
+        "",
+        ...briefLines,
+        "In the meantime, have a look at recent work: https://studiomizani.com/work",
+        "",
+        "— Studio Mizan, Nairobi",
+      ].join("\n"),
     });
   } catch (err) {
     console.error("[Contact Form] Failed to send email", err);

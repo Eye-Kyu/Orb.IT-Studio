@@ -94,7 +94,7 @@ export default function AgencyHero() {
       />
 
       {/* top bar */}
-      <div className="ah-topbar flex items-center justify-between px-4 lg:px-14 pt-8 lg:pt-12 text-[10px] tracking-[0.25em] uppercase opacity-40">
+      <div className="ah-topbar flex items-center justify-between px-4 lg:px-14 pt-8 lg:pt-12 text-[10px] tracking-[0.25em] uppercase opacity-40 lg:text-[13px]">
         <span>Nairobi, Kenya</span>
         <span>Est. 2020</span>
       </div>
@@ -122,7 +122,7 @@ export default function AgencyHero() {
 
         {/* scroll indicator */}
         <div className="hidden lg:flex flex-col items-center gap-2 opacity-35">
-          <span className="text-[10px] tracking-[0.2em] uppercase rotate-90 mb-3">
+          <span className="text-[10px] tracking-[0.2em] uppercase rotate-90 mb-3 lg:text-[13px]">
             scroll
           </span>
           <div

@@ -3,21 +3,27 @@ import { useEffect, useRef } from "react";
 import Link from "next/link";
 import { gsap } from "gsap";
 import ContactForm from "./contact-form";
+import NairobiClock from "./nairobi-clock";
 
-const HERO_LINES = ["SAY", "HELLO."];
+const HERO_LINES = ["KARIBU.", "SAY HELLO."];
+
+// Set NEXT_PUBLIC_CAL_URL (e.g. https://cal.com/studiomizan/intro) to show a
+// "book a call" button for people who'd rather talk than type.
+const CAL_URL = process.env.NEXT_PUBLIC_CAL_URL;
 
 function splitChars(text: string) {
   return text.split("").map((char, i) => (
     <span key={i} className="ch-char inline-block">
-      {char}
+      {char === " " ? " " : char}
     </span>
   ));
 }
 
 const NEXT_STEPS = [
-  "We read your message",
-  "We respond within 24h",
-  "We get to work",
+  "You get a copy of your brief by email",
+  "We reply within 24 hours, Nairobi time",
+  "A short call to pin down scope and budget",
+  "A written proposal — then we get to work",
 ];
 
 const SOCIALS = [
@@ -93,7 +99,7 @@ export default function ContactHeroAndLayout() {
           }}
         />
 
-        <p className="ch-label text-[10px] tracking-[0.25em] uppercase opacity-40 mb-6">
+        <p className="ch-label text-[10px] tracking-[0.25em] uppercase opacity-40 mb-6 lg:text-[13px]">
           Studio Mizan / Contact
         </p>
 
@@ -121,12 +127,12 @@ export default function ContactHeroAndLayout() {
         <aside className="lg:w-2/5 lg:sticky lg:top-24 lg:self-start flex flex-col gap-10">
           {/* reach us */}
           <div className="ch-info-item flex flex-col gap-1">
-            <p className="text-[10px] tracking-[0.25em] uppercase opacity-35 mb-2">
+            <p className="text-[10px] tracking-[0.25em] uppercase opacity-35 mb-2 lg:text-[13px]">
               Reach Us
             </p>
             <a
               href="mailto:hello@studiomizani.com"
-              className="text-sm text-teal-600 hover:text-teal-500 transition-colors duration-200"
+              className="text-sm text-teal-600 hover:text-teal-500 transition-colors duration-200 lg:text-base"
             >
               hello@studiomizani.com
             </a>
@@ -134,16 +140,33 @@ export default function ContactHeroAndLayout() {
 
           {/* location */}
           <div className="ch-info-item flex flex-col gap-1">
-            <p className="text-[10px] tracking-[0.25em] uppercase opacity-35 mb-2">
+            <p className="text-[10px] tracking-[0.25em] uppercase opacity-35 mb-2 lg:text-[13px]">
               Where
             </p>
-            <p className="text-sm opacity-60">Nairobi, Kenya</p>
-            <p className="text-xs opacity-35">Working globally</p>
+            <p className="text-sm opacity-60 lg:text-base">Nairobi, Kenya</p>
+            <p className="text-xs opacity-35 mb-3 lg:text-sm">Working globally</p>
+            <NairobiClock />
           </div>
+
+          {CAL_URL && (
+            <div className="ch-info-item flex flex-col gap-3">
+              <p className="text-[10px] tracking-[0.25em] uppercase opacity-35 lg:text-[13px]">
+                Rather talk?
+              </p>
+              <a
+                href={CAL_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 w-fit text-xs tracking-[0.22em] uppercase bg-[#EAB308] text-black px-5 py-3 hover:bg-yellow-400 transition-colors lg:text-sm"
+              >
+                Book a 20-min call <span aria-hidden>↗</span>
+              </a>
+            </div>
+          )}
 
           {/* what happens next */}
           <div className="ch-info-item flex flex-col gap-4">
-            <p className="text-[10px] tracking-[0.25em] uppercase opacity-35">
+            <p className="text-[10px] tracking-[0.25em] uppercase opacity-35 lg:text-[13px]">
               What Happens Next
             </p>
             {NEXT_STEPS.map((step, i) => (
@@ -154,14 +177,14 @@ export default function ContactHeroAndLayout() {
                 >
                   {String(i + 1).padStart(2, "0")}
                 </span>
-                <p className="text-sm opacity-55 leading-snug pt-0.5">{step}</p>
+                <p className="text-sm opacity-55 leading-snug pt-0.5 lg:text-base">{step}</p>
               </div>
             ))}
           </div>
 
           {/* socials */}
           <div className="ch-info-item flex flex-col gap-3">
-            <p className="text-[10px] tracking-[0.25em] uppercase opacity-35 mb-1">
+            <p className="text-[10px] tracking-[0.25em] uppercase opacity-35 mb-1 lg:text-[13px]">
               Follow Us
             </p>
             <div className="flex gap-6">
@@ -171,7 +194,7 @@ export default function ContactHeroAndLayout() {
                   href={s.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-xs tracking-wider uppercase opacity-50 hover:opacity-100 hover:text-[#EAB308] transition-all duration-200"
+                  className="text-xs tracking-wider uppercase opacity-50 hover:opacity-100 hover:text-[#EAB308] transition-all duration-200 lg:text-sm"
                 >
                   {s.label}
                 </Link>

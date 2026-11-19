@@ -134,7 +134,7 @@ const Link = ({ heading, imgSrc, subheading, href }: LinkProps) => {
           transition={{ type: "spring", stiffness: 300, damping: 30 }}
           className="overflow-hidden"
         >
-          <span className="relative z-[1] para mt-2 block text-base text-gray-600 mix-blend-darken">
+          <span className="relative z-[1] para mt-2 block text-base text-gray-600 mix-blend-darken lg:text-lg">
             {subheading}
           </span>
         </motion.div>
@@ -166,7 +166,7 @@ const Link = ({ heading, imgSrc, subheading, href }: LinkProps) => {
         className="relative z-10 p-4 flex flex-col items-center gap-1 text-teal-500 shrink-0"
       >
         <ArrowRight size={28} strokeWidth={1.5} />
-        <span className="text-xs tracking-widest uppercase">Learn more</span>
+        <span className="text-xs tracking-widest uppercase lg:text-sm">Learn more</span>
       </motion.div>
     </MotionNextLink>
   );

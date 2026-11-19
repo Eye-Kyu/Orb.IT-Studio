@@ -9,6 +9,7 @@ import Miniservices from "@/components/ui/mini-services";
 import { HoverImageLinks } from "@/components/ui/service";
 import Landingpage from "@/components/ui/hero";
 import MagneticTestimonials from "@/components/ui/testimoni";
+import FeaturedWork from "@/components/ui/featured-work";
 
 export const metadata: Metadata = {
   alternates: {
@@ -18,22 +19,27 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <div className="w-full overflow-x-hidden">
+    <main id="main" className="w-full overflow-x-hidden">
       <Landingpage lines={["MAKE WAVES...", "NOT RIPPLES"]} />
 
       <section className="py-24 lg:py-40 -mt-[80px] relative">
         <Orby>
-          A Digital Design and Tech Studio based in Nairobi. We build brands,
-          create digital experiences and shape the stories of Tomorrow.
+          A design and tech studio in Nairobi. We build the brands, websites
+          and products that make people stop scrolling — and start buying.
         </Orby>
       </section>
 
       <section className="py-16 lg:py-28">
-        <Madividi heading="JOIN OUR CREATIVE JOURNEY">
-          Discover how <span className="underlining">Studio Mizan</span> can
-          transform your projects with our innovative designs. Lets create
-          something amazing together!!
+        <Madividi heading="ONE STUDIO. NO HAND-OFFS.">
+          At <span className="underlining">Studio Mizan</span> the person you
+          brief is the person who designs and builds. From an export logistics
+          platform to a school management system, every project goes from
+          sketch to launch in the same hands.
         </Madividi>
+      </section>
+
+      <section className="py-16 lg:py-28">
+        <FeaturedWork />
       </section>
 
       <section className="py-16 lg:py-24 landingly">
@@ -51,17 +57,17 @@ export default function Home() {
       </section>
 
       <section className="py-16 lg:py-28 placecenter flex-col space-y-10">
-        <Subtopic>CONNECT WITH US</Subtopic>
+        <Subtopic>GOT SOMETHING IN MIND?</Subtopic>
         <Centertext>
-          Reach out to Studio Mizan for enquiries, collaborations or support. We
-          are here to help you achieve your goals.
+          Build your brief in two minutes and get an instant timeline estimate.
+          A real reply follows within 24 hours, Nairobi time.
         </Centertext>
         <div className="flex flex-col lg:flex-row-reverse w-full lg:gap-3 items-center justify-center space-y-3 lg:space-y-0">
-          <Miniservices>Design Consultation</Miniservices>
-          <Miniservices>Technical Support</Miniservices>
-          <Miniservices>Project Collaboration</Miniservices>
+          <Miniservices href="/now">See what&apos;s on the bench</Miniservices>
+          <Miniservices href="/work">Browse the work</Miniservices>
+          <Miniservices href="/contact">Build your brief →</Miniservices>
         </div>
       </section>
-    </div>
+    </main>
   );
 }

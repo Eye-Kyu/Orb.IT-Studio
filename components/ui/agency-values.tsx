@@ -72,7 +72,7 @@ export default function AgencyValues() {
 
   return (
     <section ref={containerRef} className="px-4 lg:px-14 py-16 lg:py-24">
-      <p className="av-label text-[10px] tracking-[0.25em] uppercase opacity-40 mb-10">
+      <p className="av-label text-[10px] tracking-[0.25em] uppercase opacity-40 mb-10 lg:text-[13px]">
         What We Stand For
       </p>
 

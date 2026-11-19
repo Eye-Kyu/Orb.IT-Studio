@@ -122,7 +122,7 @@ export default function SolutionsLanding() {
 
       {/* top section */}
       <div className="flex flex-col px-4 lg:px-14 pt-10 lg:pt-16 flex-1">
-        <p className="sl-label text-xs tracking-[0.25em] uppercase font-satoshi opacity-50 mb-8">
+        <p className="sl-label text-xs tracking-[0.25em] uppercase font-satoshi opacity-50 mb-8 lg:text-sm">
           Studio Mizan / Solutions
         </p>
 
@@ -164,7 +164,7 @@ export default function SolutionsLanding() {
               >
                 {stat.value}
               </span>
-              <span className="text-xs tracking-widest uppercase opacity-50 mt-1">
+              <span className="text-xs tracking-widest uppercase opacity-50 mt-1 lg:text-sm">
                 {stat.label}
               </span>
             </div>
@@ -173,7 +173,7 @@ export default function SolutionsLanding() {
 
         {/* scroll indicator */}
         <div className="hidden lg:flex flex-col items-center gap-2 opacity-40">
-          <span className="text-[10px] tracking-[0.2em] uppercase rotate-90 mb-3">
+          <span className="text-[10px] tracking-[0.2em] uppercase rotate-90 mb-3 lg:text-[13px]">
             scroll
           </span>
           <div

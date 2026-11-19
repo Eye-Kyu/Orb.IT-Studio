@@ -131,6 +131,12 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <a
+          href="#main"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[10000] focus:bg-[#EAB308] focus:text-black focus:px-4 focus:py-2 focus:rounded"
+        >
+          Skip to content
+        </a>
         <ThemeProvider>
           <Cursor />
           <ScrollColorProvider />

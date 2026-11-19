@@ -20,7 +20,7 @@ export default function Missingpage() {
       </div>
       <Link
         href="/"
-        className="rounded-full border border-neutral-700 px-6 py-2 text-sm uppercase tracking-widest transition-colors hover:border-teal-500 hover:text-teal-500"
+        className="rounded-full border border-neutral-700 px-6 py-2 text-sm uppercase tracking-widest transition-colors hover:border-teal-500 hover:text-teal-500 lg:text-base"
       >
         Back home
       </Link>

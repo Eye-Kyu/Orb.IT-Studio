@@ -6,17 +6,8 @@ import Link from "next/link";
 import { gsap } from "gsap";
 import { services } from "@/lib/services-data";
 import { submitContactForm, type ContactFormState } from "@/app/contact/actions";
-
-const BUDGET_OPTIONS = [
-  "Under KSh 50k",
-  "KSh 50k – 150k",
-  "KSh 150k – 500k",
-  "KSh 500k – 1M",
-  "KSh 1M+",
-  "Let's discuss",
-];
-
-const TIMELINE_OPTIONS = ["ASAP", "Within 1 month", "1-3 months", "Just exploring"];
+import { BUDGET_OPTIONS, TIMELINE_OPTIONS, sanitizeServices } from "@/lib/brief";
+import BriefPanel from "./brief-panel";
 
 function FloatingLabel({
   id,
@@ -49,7 +40,7 @@ function FloatingLabel({
             : { y: 0, scale: 1, color: "#888" }
         }
         transition={{ duration: 0.18, ease: "easeOut" }}
-        className="absolute left-0 top-2 text-sm origin-left pointer-events-none"
+        className="absolute left-0 top-2 text-sm origin-left pointer-events-none lg:text-base"
         style={{ fontFamily: "Satoshi, sans-serif" }}
       >
         {label}
@@ -69,12 +60,14 @@ function FloatingLabel({
 
 export default function ContactForm() {
   const searchParams = useSearchParams();
-  const preServices = searchParams.get("services")?.split(",").filter(Boolean) ?? [];
+  const preServices = sanitizeServices(searchParams.get("services")?.split(",") ?? []);
 
   const [selected, setSelected] = useState<Set<string>>(new Set(preServices));
   const formRef = useRef<HTMLDivElement>(null);
   const [isPending, setIsPending] = useState(false);
   const [state, setState] = useState<ContactFormState | null>(null);
+  const [budget, setBudget] = useState("");
+  const [timeline, setTimeline] = useState("");
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -123,12 +116,12 @@ export default function ContactForm() {
         >
           THANK YOU.
         </h3>
-        <p className="text-base opacity-55 leading-relaxed max-w-sm">
+        <p className="text-base opacity-55 leading-relaxed max-w-sm lg:text-lg">
           Your message is in. We&apos;ll get back to you within 24 hours — usually sooner.
         </p>
         <Link
           href="/"
-          className="inline-flex items-center gap-2 text-xs tracking-[0.22em] uppercase border-b border-foreground/30 pb-1 w-fit hover:border-[#EAB308] hover:text-[#EAB308] transition-colors duration-200"
+          className="inline-flex items-center gap-2 text-xs tracking-[0.22em] uppercase border-b border-foreground/30 pb-1 w-fit hover:border-[#EAB308] hover:text-[#EAB308] transition-colors duration-200 lg:text-sm"
         >
           ← Back to home
         </Link>
@@ -140,9 +133,14 @@ export default function ContactForm() {
     <div ref={formRef}>
       <form
         onSubmit={handleSubmit}
-        className="flex flex-col gap-10"
+        className="relative flex flex-col gap-10"
         noValidate
       >
+        {/* honeypot — hidden from people and screen readers, bots tend to fill it */}
+        <div aria-hidden="true" className="absolute -left-[9999px] w-px h-px overflow-hidden">
+          <label htmlFor="website">Website</label>
+          <input id="website" name="website" type="text" tabIndex={-1} autoComplete="off" />
+        </div>
         {/* row 1: name + email */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
           <div className="cf-field">
@@ -151,9 +149,11 @@ export default function ContactForm() {
                 id="name"
                 name="name"
                 type="text"
+                maxLength={100}
+                autoComplete="name"
                 required
                 disabled={isPending}
-                className="w-full bg-transparent pt-6 pb-2 text-sm outline-none"
+                className="w-full bg-transparent pt-6 pb-2 text-sm outline-none lg:text-base"
               />
             </FloatingLabel>
           </div>
@@ -163,9 +163,11 @@ export default function ContactForm() {
                 id="email"
                 name="email"
                 type="email"
+                maxLength={200}
+                autoComplete="email"
                 required
                 disabled={isPending}
-                className="w-full bg-transparent pt-6 pb-2 text-sm outline-none"
+                className="w-full bg-transparent pt-6 pb-2 text-sm outline-none lg:text-base"
               />
             </FloatingLabel>
           </div>
@@ -179,8 +181,10 @@ export default function ContactForm() {
                 id="company"
                 name="company"
                 type="text"
+                maxLength={150}
+                autoComplete="organization"
                 disabled={isPending}
-                className="w-full bg-transparent pt-6 pb-2 text-sm outline-none"
+                className="w-full bg-transparent pt-6 pb-2 text-sm outline-none lg:text-base"
               />
             </FloatingLabel>
           </div>
@@ -190,8 +194,9 @@ export default function ContactForm() {
                 id="referral"
                 name="referral"
                 type="text"
+                maxLength={150}
                 disabled={isPending}
-                className="w-full bg-transparent pt-6 pb-2 text-sm outline-none"
+                className="w-full bg-transparent pt-6 pb-2 text-sm outline-none lg:text-base"
               />
             </FloatingLabel>
           </div>
@@ -199,7 +204,7 @@ export default function ContactForm() {
 
         {/* services pill select */}
         <div className="cf-field flex flex-col gap-3">
-          <p className="text-[10px] tracking-[0.22em] uppercase opacity-40">
+          <p className="text-[10px] tracking-[0.22em] uppercase opacity-40 lg:text-[13px]">
             Services interested in
           </p>
           <div className="flex flex-wrap gap-2">
@@ -219,7 +224,7 @@ export default function ContactForm() {
                     isOn
                       ? "bg-[#EAB308] border-[#EAB308] text-white"
                       : "border-foreground/25 text-foreground/60 hover:border-[#EAB308]/60"
-                  }`}
+                  } lg:text-[13px]`}
                 >
                   {isOn && <span className="mr-1">✓</span>}
                   {s.title}
@@ -233,7 +238,7 @@ export default function ContactForm() {
         <div className="cf-field">
           <label
             htmlFor="budget"
-            className="block text-[10px] tracking-[0.22em] uppercase opacity-40 mb-3"
+            className="block text-[10px] tracking-[0.22em] uppercase opacity-40 mb-3 lg:text-[13px]"
           >
             Budget Range
           </label>
@@ -242,8 +247,9 @@ export default function ContactForm() {
               id="budget"
               name="budget"
               disabled={isPending}
-              defaultValue=""
-              className="w-full bg-transparent pb-2 pt-1 text-sm outline-none appearance-none cursor-pointer"
+              value={budget}
+              onChange={(e) => setBudget(e.target.value)}
+              className="w-full bg-transparent pb-2 pt-1 text-sm outline-none appearance-none cursor-pointer lg:text-base"
             >
               <option value="" disabled>
                 Select a range
@@ -261,7 +267,7 @@ export default function ContactForm() {
         <div className="cf-field">
           <label
             htmlFor="timeline"
-            className="block text-[10px] tracking-[0.22em] uppercase opacity-40 mb-3"
+            className="block text-[10px] tracking-[0.22em] uppercase opacity-40 mb-3 lg:text-[13px]"
           >
             Timeline
           </label>
@@ -270,8 +276,9 @@ export default function ContactForm() {
               id="timeline"
               name="timeline"
               disabled={isPending}
-              defaultValue=""
-              className="w-full bg-transparent pb-2 pt-1 text-sm outline-none appearance-none cursor-pointer"
+              value={timeline}
+              onChange={(e) => setTimeline(e.target.value)}
+              className="w-full bg-transparent pb-2 pt-1 text-sm outline-none appearance-none cursor-pointer lg:text-base"
             >
               <option value="" disabled>
                 Select a timeline
@@ -285,6 +292,11 @@ export default function ContactForm() {
           </div>
         </div>
 
+        {/* live brief + estimate */}
+        <div className="cf-field">
+          <BriefPanel services={Array.from(selected)} budget={budget} timeline={timeline} />
+        </div>
+
         {/* message */}
         <div className="cf-field">
           <FloatingLabel id="message" label="Your Message" required>
@@ -293,8 +305,9 @@ export default function ContactForm() {
               name="message"
               required
               rows={5}
+              maxLength={5000}
               disabled={isPending}
-              className="w-full bg-transparent pt-6 pb-2 text-sm outline-none resize-none"
+              className="w-full bg-transparent pt-6 pb-2 text-sm outline-none resize-none lg:text-base"
             />
           </FloatingLabel>
         </div>
@@ -306,7 +319,7 @@ export default function ContactForm() {
               initial={{ opacity: 0, y: -6 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0 }}
-              className="text-sm text-red-500"
+              className="text-sm text-red-500 lg:text-base"
             >
               {state.error}
             </motion.p>
@@ -318,7 +331,7 @@ export default function ContactForm() {
           <button
             type="submit"
             disabled={isPending}
-            className="inline-flex items-center gap-3 text-xs tracking-[0.22em] uppercase border border-foreground/30 px-6 py-3 hover:border-[#EAB308] hover:text-[#EAB308] transition-all duration-250 disabled:opacity-40 disabled:pointer-events-none"
+            className="inline-flex items-center gap-3 text-xs tracking-[0.22em] uppercase border border-foreground/30 px-6 py-3 hover:border-[#EAB308] hover:text-[#EAB308] transition-all duration-250 disabled:opacity-40 disabled:pointer-events-none lg:text-sm"
           >
             {isPending ? (
               <>
@@ -328,7 +341,7 @@ export default function ContactForm() {
             ) : (
               <>
                 Send Message
-                <span className="text-base">→</span>
+                <span className="text-base lg:text-lg">→</span>
               </>
             )}
           </button>

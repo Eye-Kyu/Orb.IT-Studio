@@ -5,6 +5,8 @@ import { getServiceBySlug, getRelatedServices, services } from "@/lib/services-d
 import ServiceHero from "@/components/ui/service-hero";
 import ServiceProcessSection from "@/components/ui/service-process";
 import ServiceSelector from "@/components/ui/service-selector";
+import WorkCard from "@/components/ui/work-card";
+import { getCaseStudiesForService } from "@/lib/work-data";
 
 interface PageProps {
   params: { slug: string };
@@ -37,9 +39,10 @@ export default function ServicePage({ params }: PageProps) {
   if (!service) notFound();
 
   const related = getRelatedServices(service.slug, 3);
+  const work = getCaseStudiesForService(service.slug).slice(0, 2);
 
   return (
-    <main className="w-full overflow-x-hidden">
+    <main id="main" className="w-full overflow-x-hidden">
       {/* 1 — Hero */}
       <ServiceHero service={service} />
 
@@ -63,14 +66,14 @@ export default function ServicePage({ params }: PageProps) {
             </p>
 
             <div>
-              <p className="text-[10px] tracking-[0.25em] uppercase opacity-40 mb-3">
+              <p className="text-[10px] tracking-[0.25em] uppercase opacity-40 mb-3 lg:text-[13px]">
                 Included
               </p>
               <div className="flex flex-wrap gap-2" id="subservices">
                 {service.subservices.map((sub) => (
                   <span
                     key={sub}
-                    className="text-xs tracking-wider uppercase border border-foreground/25 rounded-full px-3.5 py-1.5 hover:border-[#EAB308]/60 hover:text-[#EAB308] transition-colors duration-200 cursor-default"
+                    className="text-xs tracking-wider uppercase border border-foreground/25 rounded-full px-3.5 py-1.5 hover:border-[#EAB308]/60 hover:text-[#EAB308] transition-colors duration-200 cursor-default lg:text-sm"
                   >
                     {sub}
                   </span>
@@ -86,9 +89,28 @@ export default function ServicePage({ params }: PageProps) {
         <ServiceProcessSection steps={service.process} />
       </div>
 
+      {/* 3b — Proof: case studies that used this service */}
+      {work.length > 0 && (
+        <section className="px-4 lg:px-14 py-16 lg:py-24 border-b border-foreground/10">
+          <div className="flex items-end justify-between gap-6 mb-10">
+            <p className="text-xs tracking-[0.25em] uppercase opacity-40 lg:text-sm">
+              {service.title.toLowerCase()} in the wild
+            </p>
+            <Link href="/work" className="text-xs tracking-[0.22em] uppercase opacity-60 hover:opacity-100 hover:text-[#EAB308] lg:text-sm">
+              All work →
+            </Link>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-12">
+            {work.map((c, i) => (
+              <WorkCard key={c.slug} study={c} index={i} />
+            ))}
+          </div>
+        </section>
+      )}
+
       {/* 4 — Related Services */}
       <section className="px-4 lg:px-14 py-16 lg:py-24 border-b border-foreground/10">
-        <p className="text-xs tracking-[0.25em] uppercase opacity-40 mb-8">
+        <p className="text-xs tracking-[0.25em] uppercase opacity-40 mb-8 lg:text-sm">
           Other Services
         </p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-px border border-foreground/10">
@@ -111,8 +133,8 @@ export default function ServicePage({ params }: PageProps) {
               >
                 {rel.title}
               </h3>
-              <p className="text-xs opacity-45">{rel.tagline}</p>
-              <span className="text-[10px] tracking-widest uppercase text-[#EAB308] opacity-0 group-hover:opacity-100 transition-opacity duration-200 mt-4">
+              <p className="text-xs opacity-45 lg:text-sm">{rel.tagline}</p>
+              <span className="text-[10px] tracking-widest uppercase text-[#EAB308] opacity-0 group-hover:opacity-100 transition-opacity duration-200 mt-4 lg:text-[13px]">
                 View →
               </span>
             </Link>
@@ -125,7 +147,7 @@ export default function ServicePage({ params }: PageProps) {
         <div className="flex flex-col lg:flex-row lg:items-start gap-10 lg:gap-20">
           {/* heading */}
           <div className="lg:w-2/5">
-            <p className="text-xs tracking-[0.25em] uppercase opacity-40 mb-4">
+            <p className="text-xs tracking-[0.25em] uppercase opacity-40 mb-4 lg:text-sm">
               Interested?
             </p>
             <h2

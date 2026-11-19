@@ -59,7 +59,7 @@ export default function ServiceProcessSection({ steps }: ServiceProcessProps) {
 
   return (
     <section ref={containerRef} className="px-4 lg:px-14 py-16 lg:py-24">
-      <p className="sp-section-label text-xs tracking-[0.25em] uppercase opacity-40 mb-10">
+      <p className="sp-section-label text-xs tracking-[0.25em] uppercase opacity-40 mb-10 lg:text-sm">
         Our Process
       </p>
 
@@ -82,7 +82,7 @@ export default function ServiceProcessSection({ steps }: ServiceProcessProps) {
             >
               {step.heading}
             </h4>
-            <p className="text-sm opacity-55 leading-relaxed">{step.body}</p>
+            <p className="text-sm opacity-55 leading-relaxed lg:text-base">{step.body}</p>
           </div>
         ))}
       </div>
@@ -104,7 +104,7 @@ export default function ServiceProcessSection({ steps }: ServiceProcessProps) {
               >
                 {step.heading}
               </h4>
-              <p className="text-sm opacity-55 leading-relaxed">{step.body}</p>
+              <p className="text-sm opacity-55 leading-relaxed lg:text-base">{step.body}</p>
             </div>
           </div>
         ))}

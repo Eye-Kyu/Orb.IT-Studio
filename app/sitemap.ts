@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { services } from "@/lib/services-data";
+import { caseStudies } from "@/lib/work-data";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://studiomizani.com";
@@ -25,6 +26,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     ...serviceRoutes,
+    {
+      url: `${baseUrl}/work`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    ...caseStudies.map((c) => ({
+      url: `${baseUrl}/work/${c.slug}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+    })),
+    {
+      url: `${baseUrl}/now`,
+      lastModified: new Date(),
+      changeFrequency: "daily",
+      priority: 0.5,
+    },
     {
       url: `${baseUrl}/agency`,
       lastModified: new Date(),

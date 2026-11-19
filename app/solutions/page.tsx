@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 
 export default function Solutions() {
   return (
-    <div>
+    <main id="main">
       <SolutionsLanding />
 
       {/* <Orby>
@@ -32,6 +32,6 @@ export default function Solutions() {
        */}
       <Works />
       <Startproject />
-    </div>
+    </main>
   );
 }

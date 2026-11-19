@@ -30,7 +30,7 @@ export default function ServiceSelector({ preSelected }: ServiceSelectorProps) {
 
   return (
     <div className="w-full">
-      <p className="text-xs tracking-[0.25em] uppercase opacity-50 mb-5">
+      <p className="text-xs tracking-[0.25em] uppercase opacity-50 mb-5 lg:text-sm">
         What do you need?
       </p>
 
@@ -77,7 +77,7 @@ export default function ServiceSelector({ preSelected }: ServiceSelectorProps) {
       <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
         <motion.div
           animate={{ opacity: selected.size > 0 ? 1 : 0.3 }}
-          className="text-xs tracking-wide opacity-50 flex-1"
+          className="text-xs tracking-wide opacity-50 flex-1 lg:text-sm"
         >
           {selected.size > 0 ? (
             <>
@@ -107,10 +107,10 @@ export default function ServiceSelector({ preSelected }: ServiceSelectorProps) {
                 ? "border-[#EAB308] text-[#EAB308] hover:bg-[#EAB308] hover:text-white"
                 : "border-foreground/15 text-foreground/20 pointer-events-none"
             }
-          `}
+           lg:text-sm`}
         >
           Get a Quote
-          <span className="text-base leading-none">→</span>
+          <span className="text-base leading-none lg:text-lg">→</span>
         </Link>
       </div>
     </div>

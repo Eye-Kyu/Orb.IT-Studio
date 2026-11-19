@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 
 export default function Contact() {
   return (
-    <main className="w-full overflow-x-hidden">
+    <main id="main" className="w-full overflow-x-hidden">
       <Suspense>
         <ContactHeroAndLayout />
       </Suspense>

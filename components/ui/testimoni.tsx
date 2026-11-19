@@ -97,7 +97,7 @@ const testimonials = [
   {
     id: 1,
     content:
-      "Great work, communicaion was timely and clear.I am in awe of the results. Highly recommend!",
+      "Great work, communication was timely and clear. I am in awe of the results. Highly recommend!",
     author: "Brian Mwangi",
     role: "Founder, Mwakie Visuals",
   },
@@ -142,7 +142,7 @@ const MagneticTestimonials = () => {
 
           {/* Testimonial content */}
           <div className="space-y-2">
-            <p className="text-base md:text-4xl font-light leading-relaxed">
+            <p className="text-base md:text-4xl font-light leading-relaxed lg:text-lg">
               {testimonials[activeIndex].content}
             </p>
 

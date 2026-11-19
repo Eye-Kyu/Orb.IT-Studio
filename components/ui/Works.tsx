@@ -73,7 +73,7 @@ export default function Works() {
 
               {/* top row: number label + arrow */}
               <div className="flex items-center justify-between mb-auto z-10">
-                <span className="text-xs tracking-[0.2em] uppercase opacity-40">
+                <span className="text-xs tracking-[0.2em] uppercase opacity-40 lg:text-sm">
                   {num}
                 </span>
                 <motion.span
@@ -95,7 +95,7 @@ export default function Works() {
               </h3>
 
               {/* tagline */}
-              <p className="text-sm opacity-50 z-10 mb-5 leading-snug">
+              <p className="text-sm opacity-50 z-10 mb-5 leading-snug lg:text-base">
                 {service.tagline}
               </p>
 
@@ -104,13 +104,13 @@ export default function Works() {
                 {service.subservices.slice(0, 3).map((sub) => (
                   <span
                     key={sub}
-                    className="text-[10px] tracking-wider uppercase border border-foreground/20 rounded-full px-2.5 py-0.5 opacity-60"
+                    className="text-[10px] tracking-wider uppercase border border-foreground/20 rounded-full px-2.5 py-0.5 opacity-60 lg:text-[13px]"
                   >
                     {sub}
                   </span>
                 ))}
                 {service.subservices.length > 3 && (
-                  <span className="text-[10px] tracking-wider uppercase border border-foreground/20 rounded-full px-2.5 py-0.5 opacity-40">
+                  <span className="text-[10px] tracking-wider uppercase border border-foreground/20 rounded-full px-2.5 py-0.5 opacity-40 lg:text-[13px]">
                     +{service.subservices.length - 3} more
                   </span>
                 )}
@@ -147,7 +147,7 @@ export default function Works() {
               <motion.p
                 animate={{ opacity: isHovered ? 1 : 0, y: isHovered ? 0 : 6 }}
                 transition={{ duration: 0.2 }}
-                className="text-xs tracking-widest uppercase text-[#EAB308] z-10 mt-auto pt-4 border-t border-foreground/10"
+                className="text-xs tracking-widest uppercase text-[#EAB308] z-10 mt-auto pt-4 border-t border-foreground/10 lg:text-sm"
               >
                 View Service →
               </motion.p>

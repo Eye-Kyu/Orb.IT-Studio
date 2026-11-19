@@ -116,24 +116,24 @@ export default function Intouch() {
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
                 href="/solutions"
-                className="it-cta inline-flex items-center gap-2 text-xs tracking-[0.22em] uppercase border-b border-foreground/30 pb-1 hover:border-[#EAB308] hover:text-[#EAB308] transition-colors duration-250"
+                className="it-cta inline-flex items-center gap-2 text-xs tracking-[0.22em] uppercase border-b border-foreground/30 pb-1 hover:border-[#EAB308] hover:text-[#EAB308] transition-colors duration-250 lg:text-sm"
               >
                 Start a Project
-                <span className="text-base">→</span>
+                <span className="text-base lg:text-lg">→</span>
               </Link>
               <Link
                 href="/contact"
-                className="it-cta inline-flex items-center gap-2 text-xs tracking-[0.22em] uppercase border-b border-foreground/30 pb-1 hover:border-[#EAB308] hover:text-[#EAB308] transition-colors duration-250"
+                className="it-cta inline-flex items-center gap-2 text-xs tracking-[0.22em] uppercase border-b border-foreground/30 pb-1 hover:border-[#EAB308] hover:text-[#EAB308] transition-colors duration-250 lg:text-sm"
               >
                 Send a Message
-                <span className="text-base">→</span>
+                <span className="text-base lg:text-lg">→</span>
               </Link>
             </div>
 
             {/* email */}
             <a
               href="mailto:hello@studiomizani.com"
-              className="text-sm text-teal-600 hover:text-teal-500 tracking-wide transition-colors duration-200"
+              className="text-sm text-teal-600 hover:text-teal-500 tracking-wide transition-colors duration-200 lg:text-base"
             >
               hello@studiomizani.com
             </a>

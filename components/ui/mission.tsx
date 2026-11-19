@@ -9,7 +9,7 @@ const MISSION_TEXT =
   "To make the digital world more beautiful, thoughtful, and impactful.";
 
 const BODY =
-  "We are a team of passionate engineers, designers, and creatives dedicated to creating groundbreaking digital experiences that make the world a better place.";
+  "Studio Mizan is a founder-led studio in Nairobi. You work directly with the person who designs and builds your product — no account managers, no hand-offs. When a project needs more hands, we bring in specialists from a trusted bench of designers, developers and marketers, picked for that job.";
 
 export default function Mission() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -104,7 +104,7 @@ export default function Mission() {
       <div className="flex flex-col lg:flex-row gap-8 lg:gap-20">
         {/* left: decorative label */}
         <div className="lg:w-1/3">
-          <p className="text-[10px] tracking-[0.25em] uppercase opacity-35">
+          <p className="text-[10px] tracking-[0.25em] uppercase opacity-35 lg:text-[13px]">
             Who We Are
           </p>
         </div>

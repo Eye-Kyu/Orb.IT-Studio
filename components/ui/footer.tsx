@@ -4,13 +4,16 @@ import Link from "next/link";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Separator } from "@radix-ui/themes";
+import NairobiClock from "./nairobi-clock";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const NAV_LINKS = [
   { label: "Home", href: "/" },
+  { label: "Work", href: "/work" },
   { label: "Solutions", href: "/solutions" },
   { label: "Agency", href: "/agency" },
+  { label: "Now", href: "/now" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -18,6 +21,7 @@ const SOCIAL_LINKS = [
   { label: "LinkedIn", href: "https://www.linkedin.com/company/studiomizan" },
   { label: "Instagram", href: "https://www.instagram.com/studiomizan" },
   { label: "TikTok", href: "https://www.tiktok.com/@studiomizan" },
+  { label: "GitHub", href: "https://github.com/Eye-Kyu" },
 ];
 
 export default function Footer() {
@@ -85,22 +89,16 @@ export default function Footer() {
             </div>
 
             <div className="flex flex-col gap-1">
-              <p className="text-sm opacity-50">Nairobi, Kenya</p>
-              <p className="text-xs opacity-30">Est. 2020 · Working globally</p>
+              <p className="text-sm opacity-50 lg:text-base">Nairobi, Kenya</p>
+              <p className="text-xs opacity-30 lg:text-sm">Est. 2020 · Working globally</p>
             </div>
 
-            {/* availability status */}
-            <div className="flex items-center gap-2">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
-              </span>
-              <p className="text-xs opacity-55">Open to new projects</p>
-            </div>
+            {/* live studio status */}
+            <NairobiClock />
 
             <a
               href="mailto:hello@studiomizani.com"
-              className="text-sm text-teal-600 hover:text-teal-500 transition-colors duration-200 w-fit"
+              className="text-sm text-teal-600 hover:text-teal-500 transition-colors duration-200 w-fit lg:text-base"
             >
               hello@studiomizani.com
             </a>
@@ -110,14 +108,14 @@ export default function Footer() {
           <div className="flex flex-col sm:flex-row gap-12 lg:gap-24 lg:ml-auto">
             {/* Navigate */}
             <div className="ft-col flex flex-col gap-4">
-              <p className="text-[10px] tracking-[0.25em] uppercase opacity-35 mb-1">
+              <p className="text-[10px] tracking-[0.25em] uppercase opacity-35 mb-1 lg:text-[13px]">
                 Navigate
               </p>
               {NAV_LINKS.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-sm opacity-55 hover:opacity-100 hover:text-[#EAB308] transition-all duration-200"
+                  className="text-sm opacity-55 hover:opacity-100 hover:text-[#EAB308] transition-all duration-200 lg:text-base"
                 >
                   {link.label}
                 </Link>
@@ -126,7 +124,7 @@ export default function Footer() {
 
             {/* Connect */}
             <div className="ft-col flex flex-col gap-4">
-              <p className="text-[10px] tracking-[0.25em] uppercase opacity-35 mb-1">
+              <p className="text-[10px] tracking-[0.25em] uppercase opacity-35 mb-1 lg:text-[13px]">
                 Connect
               </p>
               {SOCIAL_LINKS.map((link) => (
@@ -135,7 +133,7 @@ export default function Footer() {
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm opacity-55 hover:opacity-100 hover:text-[#EAB308] transition-all duration-200"
+                  className="text-sm opacity-55 hover:opacity-100 hover:text-[#EAB308] transition-all duration-200 lg:text-base"
                 >
                   {link.label}
                 </a>
@@ -146,10 +144,10 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="ft-bottom mt-12 pt-6 border-t border-foreground/10 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
-          <p className="text-xs opacity-30">
+          <p className="text-xs opacity-30 lg:text-sm">
             &copy; {new Date().getFullYear()} Studio Mizan. All rights reserved.
           </p>
-          <p className="text-xs opacity-25">Crafted in Nairobi, Kenya</p>
+          <p className="text-xs opacity-25 lg:text-sm">Crafted in Nairobi, Kenya</p>
         </div>
       </div>
     </footer>

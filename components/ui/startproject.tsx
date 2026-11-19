@@ -79,7 +79,7 @@ export default function Startproject() {
 
         {/* CTA heading */}
         <div className="project placecenter flex-col">
-          <p className="sp-label text-xs tracking-[0.25em] uppercase opacity-50">
+          <p className="sp-label text-xs tracking-[0.25em] uppercase opacity-50 lg:text-sm">
             START A
           </p>
           <h2

@@ -112,7 +112,7 @@ export default function ServiceHero({ service }: ServiceHeroProps) {
       {/* content */}
       <div className="relative z-10 px-4 lg:px-14 pb-12 lg:pb-20 pt-32 lg:pt-40 flex flex-col gap-6">
         {/* breadcrumb */}
-        <nav className="sh-breadcrumb flex items-center gap-2 text-[10px] tracking-[0.25em] uppercase opacity-40">
+        <nav className="sh-breadcrumb flex items-center gap-2 text-[10px] tracking-[0.25em] uppercase opacity-40 lg:text-[13px]">
           <Link href="/solutions" className="hover:opacity-100 transition-opacity">
             Solutions
           </Link>
